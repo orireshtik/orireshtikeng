@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ori Reshtik - Executive Portfolio</title>
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js --><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0"></script>
+    <!-- Lucide Icons --><script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Assistant', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .achievement-card, .chart-card, .press-card, .recognition-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .achievement-card:hover, .chart-card:hover, .press-card:hover, .recognition-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .chart-container {
+            height: 50vh;
+            max-height: 450px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <div class="container mx-auto px-4 py-12 sm:py-20">
+
+        <!-- Hero / Overview Section --><section id="overview" class="mb-20">
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <!-- Profile Picture --><div class="flex-shrink-0">
+                        <img src="https://eshkolot.co.il/wp-content/uploads/2025/09/%D7%90%D7%95%D7%A8%D7%99-%D7%A8%D7%A9%D7%98%D7%99%D7%A7-%D7%A7%D7%A8%D7%93%D7%99%D7%98-%D7%90%D7%9E%D7%A0%D7%93%D7%94-%D7%A1%D7%95%D7%A8%D7%95%D7%93%D7%99-1.jpg" alt="Ori Reshtik" class="w-40 h-40 rounded-full object-cover ring-4 ring-offset-4 ring-violet-500">
+                    </div>
+                    <!-- Bio and Contact --><div>
+                        <h1 class="text-4xl sm:text-5xl font-bold text-slate-800">Ori Reshtik</h1>
+                        <p class="mt-4 text-lg text-slate-600">
+                            A growth-focused senior executive with over 15 years of experience leading organizations through strategic expansion, financial restructuring, and business development. Proven track record in increasing revenue, fundraising, and managing large-scale, complex budgets and operations.
+                        </p>
+                        <p class="mt-3 text-slate-600">
+                           As CEO for several national organizations, I have built long-term financial plans, streamlined resource allocation, and led multi-functional teams to achieve measurable, sustainable growth. I also possess deep expertise in intellectual property rights across music, cinema, and television, alongside capabilities in complex negotiation management.
+                        </p>
+                         <!-- Contact Links --><div class="flex items-center flex-wrap gap-4 mt-6">
+                            <a href="https://wa.me/972528044478" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600 transition-colors">
+                                <i data-lucide="message-circle" class="w-5 h-5 mr-1"></i> WhatsApp
+                            </a>
+                            <a href="mailto:orireshtik@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-red-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-red-600 transition-colors">
+                                <i data-lucide="mail" class="w-5 h-5 mr-1"></i> Email
+                            </a>
+                            <a href="https://www.linkedin.com/in/ori-reshtik/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
+                                <i data-lucide="linkedin" class="w-5 h-5 mr-1"></i> LinkedIn
+                            </a>
+                            <a href="tel:+972528044478" class="flex items-center gap-2 bg-slate-700 text-white font-semibold px-4 py-2 rounded-full hover:bg-slate-800 transition-colors">
+                                <i data-lucide="phone" class="w-5 h-5 mr-1"></i> Phone
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recognition Section --><a href="https://www.globes.co.il/news/sparticle.aspx?did=1001355042" target="_blank" rel="noopener noreferrer" class="recognition-card block mt-12 border-t pt-8">
+                    <div class="bg-slate-50 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6">
+                         <img src="https://res.cloudinary.com/globes/image/upload/f_auto/v1609311634/Digital/40%20%D7%A2%D7%9C%2040/logo-red_elh3zm.svg" alt="40 under 40" class="h-16">
+                        <div>
+                            <p class="font-bold text-slate-800 text-lg">Selected for Globes' '40 Under 40' List</p>
+                            <p class="text-slate-600">Recognized as one of Israel's most promising young leaders for 2020.</p>
+                        </div>
+                        <img src="https://www.ophirlaw.com/wp-content/uploads/2022/11/Globes-Logo.png" alt="Globes Logo" class="h-8 sm:ml-auto">
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Eshkolot Section --><section id="eshkolot" class="mb-24">
+             <div class="text-center mb-16">
+                <img src="https://eshkolot.co.il/wp-content/uploads/2017/10/header_logo.png" alt="Eshkolot Logo" class="mx-auto h-20 mb-6">
+                <h2 class="text-4xl sm:text-5xl font-bold text-slate-800 tracking-tight">Case Study: Eshkolot</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Demonstrating consistent financial growth and stability.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <div class="chart-card bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="chart-container relative">
+                        <canvas id="eshkolotRevenueChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="chart-container relative">
+                        <canvas id="eshkolotNetProfitChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-24 mb-16">
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">Key Initiatives & Achievements</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="bar-chart-3" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">33%+ Revenue Growth</h4>
+                    <p class="text-slate-600">Achieved over 33% growth in company revenue through strategic business development, negotiation, and closing long-term deals.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="percent" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">40% Growth in Royalty Distribution</h4>
+                    <p class="text-slate-600">Increased royalty distributions to stakeholders by nearly 40%, alongside establishing a relief fund for artists in need.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="scale" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Historic Legal Precedent</h4>
+                    <p class="text-slate-600">Led a successful Supreme Court case, securing royalty rights for artists from digital devices ("private copying levy").</p>
+                </div>
+                 <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="landmark" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Legislative Initiatives</h4>
+                    <p class="text-slate-600">Spearheaded legislative and regulatory initiatives to significantly increase royalty collections and company revenues.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="satellite-dish" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Long-Term Broadcasting Agreements</h4>
+                    <p class="text-slate-600">Established sustainable, long-term agreements with all major broadcasting and media corporations in Israel.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="globe-2" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">International Market Penetration</h4>
+                    <p class="text-slate-600">Joined the international umbrella organization (SCAPR) and signed agreements for collecting royalties from abroad.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="library" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Corporate Governance Model</h4>
+                    <p class="text-slate-600">Built an innovative corporate governance model, recognized by the court, establishing the company as a qualified trustee for artists' rights.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="users-round" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Establishment of Eshel</h4>
+                    <p class="text-slate-600">Founded and managed a joint collection corporation as a P&L unit, and served as Chairman of the Board.</p>
+                </div>
+                 <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="database" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Technological & Financial Systems</h4>
+                    <p class="text-slate-600">Built and implemented comprehensive information, financial, and royalty distribution systems for stakeholders.</p>
+                </div>
+            </div>
+             <!-- In the Press Section for Eshkolot --><div class="text-center mt-24 mb-16">
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">In the Press</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                 <a href="https://www.ynet.co.il/economy/article/bymju0g3t" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://www.ophirlaw.com/wp-content/uploads/2022/07/YNET-LOGO-2.webp" alt="Ynet Logo" class="max-h-8 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">January 8, 2023</p>
+                </a>
+                <a href="https://www.ynet.co.il/economy/article/bjccbvcjs" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://www.ophirlaw.com/wp-content/uploads/2022/07/YNET-LOGO-2.webp" alt="Ynet Logo" class="max-h-8 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">July 11, 2022</p>
+                </a>
+                <a href="https://www.kan.org.il/content/kan-news/culture/402022/" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Kan11Logo.svg/250px-Kan11Logo.svg.png" alt="Kan 11 Logo" class="max-h-12 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">July 4, 2023</p>
+                </a>
+                <a href="https://www.calcalist.co.il/local_news/article/hkhxhsgm2" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://pic1.calcalist.co.il/picserver3/wcm_upload_dev/2022/09/15/Hk9OzwlWi/calcalistlogn.png" alt="Calcalist Logo" class="max-h-8 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">May 20, 2021</p>
+                </a>
+                <a href="https://timeout.co.il/ppost/%D7%9E%D7%90%D7%96%D7%99%D7%A0%D7%99%D7%9D-%D7%9C%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%94-%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99%D7%AA-%D7%91%D7%A2%D7%A1%D7%A7-%D7%A9%D7%9C%D7%9B%D7%9D-%D7%9B%D7%93%D7%90%D7%99/" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                     <img src="https://tekja.com/wp-content/uploads/2019/05/press_logos_v1-07-uai-258x97.jpg" alt="Time Out Logo" class="max-h-12 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">December 19, 2023</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Divider --><hr class="my-24 border-slate-300">
+
+        <!-- SHAHAM Section --><section id="shaham" class="mb-24">
+            <div class="text-center mb-16">
+                 <img src="https://www.guidestar.org.il//servlet/servlet.FileDownload?file=00P2400000ESTGrEAP" alt="SHAHAM Logo" class="mx-auto h-24 mb-6">
+                <h2 class="text-4xl sm:text-5xl font-bold text-slate-800 tracking-tight">Case Study: SHAHAM</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">A summary of strategic initiatives and their impact on organizational and financial growth.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <div class="chart-card bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="chart-container relative">
+                        <canvas id="shahamRevenueChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="chart-container relative">
+                        <canvas id="shahamSurplusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-24 mb-16">
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">Key Initiatives & Achievements</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="users-2" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Organizational Growth</h4>
+                    <p class="text-slate-600">Expanded membership from 1,800 to 2,500, establishing SHAHAM as the largest representative organization in the cultural sector.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="expand" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Representation Expansion</h4>
+                    <p class="text-slate-600">Expanded representation from film and TV to other fields, including repertory theater, children's theater, fringe, dubbing, and more.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="handshake" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Historic Labor Agreements</h4>
+                    <p class="text-slate-600">Led negotiations for historic collective agreements, securing improved wages and social benefits for actors in major theaters, film, and TV.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">National Insurance Precedent</h4>
+                    <p class="text-slate-600">Achieved an amendment at the National Insurance Institute, granting freelance actors unemployment benefits—a critical lifeline during the COVID crisis.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="briefcase" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Professional Training Unit</h4>
+                    <p class="text-slate-600">Established a profitable and independent P&L unit for professional courses and workshops for actors.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="building-2" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Community Partnership</h4>
+                    <p class="text-slate-600">Created a framework for actors' work in the community and collaborated with the National Lottery.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="heart-handshake" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Mutual Aid & Fundraising</h4>
+                    <p class="text-slate-600">Co-founded and led the "Shakhenei Neshama" association to assist artists in distress, including raising over 1M ILS.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                     <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="award" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Awards & Recognition</h4>
+                    <p class="text-slate-600">Founded the annual SHAHAM Awards ceremony, an industry-recognized event to honor actors, similar to the SAG Awards.</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="globe-2" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">International Activity</h4>
+                    <p class="text-slate-600">Represented Israeli actors in the International Federation of Actors (FIA) and hosted an international conference to combat BDS.</p>
+                </div>
+            </div>
+            <div class="text-center mt-24 mb-16">
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">In the Press</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <a href="https://www.haaretz.co.il/gallery/media/2017-06-19/ty-article/0000017f-e2be-d7b2-a77f-e3bfee540000" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://upload.wikimedia.org/wikipedia/he/3/37/Haaretz_site_logo.png" alt="Haaretz Logo" class="max-h-8 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">June 19, 2017</p>
+                </a>
+                <a href="https://www.globes.co.il/news/article.aspx?did=1001337359" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://www.ophirlaw.com/wp-content/uploads/2022/11/Globes-Logo.png" alt="Globes Logo" class="max-h-8 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">July 16, 2020</p>
+                </a>
+                <a href="https://beersheva.mynet.co.il/local_news/article/m_387190" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                     <img src="https://www.ophirlaw.com/wp-content/uploads/2022/07/YNET-LOGO-2.webp" alt="Mynet Logo" class="max-h-8 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">February 27, 2017</p>
+                </a>
+                <a href="https://www.calcalist.co.il/consumer/articles/0,7340,L-3682671,00.html" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://pic1.calcalist.co.il/picserver3/wcm_upload_dev/2022/09/15/Hk9OzwlWi/calcalistlogn.png" alt="Calcalist Logo" class="max-h-8 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">January 22, 2016</p>
+                </a>
+                <a href="https://b.walla.co.il/item/3074506" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://www.jds-law.co.il/wp-content/uploads/2018/02/3-300x168.png" alt="Walla! Logo" class="max-h-12 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">June 20, 2017</p>
+                </a>
+                 <a href="https://www.makorrishon.co.il/nrg/online/47/ART2/756/488.html" target="_blank" rel="noopener noreferrer" class="press-card bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center h-32">
+                    <img src="https://jiss.org.il/wp-content/uploads/2023/10/d79ed7a7d795d7a8-300x300.jpg.webp" alt="Makor Rishon Logo" class="max-h-12 w-auto">
+                    <p class="text-xs text-slate-500 mt-3">March 3, 2015</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Additional Roles Section --><section id="additional-roles" class="mb-24">
+            <div class="text-center mt-24 mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold text-slate-800 tracking-tight">Additional Key Roles</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="droplet" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Chairman, Mei Givatayim</h4>
+                    <p class="text-slate-600">Led the municipal water corporation, recognized as an outstanding corporation by the Water Authority. (2016-2023)</p>
+                </div>
+                <a href="https://upload.wikimedia.org/wikipedia/he/3/3e/%D7%93%D7%99%D7%9F_%D7%95%D7%97%D7%A9%D7%91%D7%95%D7%9F_-_%D7%90%D7%95%D7%A8%D7%99_%D7%A8%D7%A9%D7%98%D7%99%D7%A7.pdf" target="_blank" rel="noopener noreferrer" class="block">
+                    <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg h-full">
+                        <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="graduation-cap" class="w-8 h-8"></i></div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Chairman, The National Union of Israeli Students</h4>
+                        <p class="text-slate-600">Led a financial recovery from a deficit, built strategic partnerships, and managed a team of 20 employees. (2012-2014)</p>
+                    </div>
+                </a>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="building" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Director, ISSTA Lines</h4>
+                    <p class="text-slate-600">Board member of a public company and its subsidiaries, including ISSTA Israel, ISSTA Properties, and American Express Travel. (2013-2015)</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="university" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Member, The Council for Higher Education</h4>
+                    <p class="text-slate-600">Member of the CHE and its subcommittees for policy, supervision, and enforcement. (2013-2015)</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="landmark" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Member, Givatayim City Council</h4>
+                    <p class="text-slate-600">Active member of the city council, city management, and the planning and construction committee. (2008-2018)</p>
+                </div>
+                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6"><i data-lucide="school" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">Chairman, Tel Aviv University Students Union</h4>
+                    <p class="text-slate-600">Managed a staff of ~80 employees with a turnover of over 48M ILS. (2010-2012)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Recognition Section --><section id="lions-award">
+             <a href="https://www.youtube.com/watch?v=xtX4ZwaOJfE&t=7s" target="_blank" rel="noopener noreferrer" class="recognition-card block">
+                <div class="bg-white rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 shadow-lg">
+                     <img src="https://upload.wikimedia.org/wikipedia/he/2/2d/Lionlogo_2c-1-.jpg" alt="Lions Gur Aryeh Logo" class="h-20">
+                    <div class="text-center sm:text-left">
+                        <p class="font-bold text-slate-800 text-xl">Lions Gur Aryeh Man of the Year</p>
+                        <p class="text-slate-600 text-lg">2011-2012</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <!-- Footer --><footer class="w-full text-center py-10 mt-24 border-t border-slate-200">
+             <h3 class="text-2xl font-bold text-slate-700 mb-6">Contact</h3>
+             <div class="flex items-center justify-center gap-x-6 md:gap-x-8 mb-6">
+                <a href="https://wa.me/972528044478" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-green-500 transition-colors"><span class="sr-only">WhatsApp</span><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg></a>
+                <a href="mailto:orireshtik@gmail.com" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-red-500 transition-colors"><span class="sr-only">Email</span><i data-lucide="mail" class="w-7 h-7"></i></a>
+                <a href="https://www.linkedin.com/in/ori-reshtik/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-blue-600 transition-colors"><span class="sr-only">LinkedIn</span><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+                <a href="tel:+972528044478" class="text-slate-500 hover:text-slate-900 transition-colors"><span class="sr-only">Phone</span><i data-lucide="phone" class="w-7 h-7"></i></a>
+            </div>
+            <p class="text-slate-500 mt-4">Ori Reshtik's Portfolio</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Chart 1: Eshkolot Revenue ---
+            const eshkolotRevCtx = document.getElementById('eshkolotRevenueChart').getContext('2d');
+            const eshkolotRevGradient = eshkolotRevCtx.createLinearGradient(0, 0, 0, 400);
+            eshkolotRevGradient.addColorStop(0, 'rgba(56, 189, 248, 0.5)');
+            eshkolotRevGradient.addColorStop(1, 'rgba(56, 189, 248, 0)');
+            
+            new Chart(eshkolotRevCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025 (Est)'],
+                    datasets: [{ data: [31.6, 36.4, 35.3, 37.2, 40.1, 42], fill: true, backgroundColor: eshkolotRevGradient, borderColor: '#0284c7', pointBackgroundColor: '#ffffff', pointBorderColor: '#0284c7', tension: 0.4 }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: "Revenue Growth Trend", font: { size: 20, weight: '700', family: 'Poppins' }, color: '#1e293b', padding: { bottom: 10 } },
+                        subtitle: { display: true, text: 'Joined: March 2021', font: { size: 14, family: 'Poppins' }, color: '#64748b', padding: { bottom: 20 } },
+                        tooltip: { enabled: true, backgroundColor: '#1e293b', padding: 12, cornerRadius: 8, displayColors: false, bodyFont: { family: 'Poppins' }, titleFont: { family: 'Poppins' }, callbacks: { label: (c) => `Revenue: ${c.parsed.y.toLocaleString()}M ILS` } },
+                    },
+                    scales: { y: { min: 30, title: { display: true, text: 'Revenue (in ILS Millions)', font: { family: 'Poppins' } }, ticks: { callback: (v) => v + 'M' } }, x: { grid: { display: false } } }
+                }
+            });
+            
+            // --- Chart 2: Eshkolot Net Profit ---
+            const eshkolotProfitCtx = document.getElementById('eshkolotNetProfitChart').getContext('2d');
+            const eshkolotProfitGradient = eshkolotProfitCtx.createLinearGradient(0, 0, 0, 400);
+            eshkolotProfitGradient.addColorStop(0, 'rgba(16, 185, 129, 0.5)');
+            eshkolotProfitGradient.addColorStop(1, 'rgba(16, 185, 129, 0)');
+            
+            new Chart(eshkolotProfitCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025 (Est)'],
+                    datasets: [{ data: [23.1, 25.5, 25.6, 26.3, 30.1, 33], fill: true, backgroundColor: eshkolotProfitGradient, borderColor: '#059669', pointBackgroundColor: '#ffffff', pointBorderColor: '#059669', tension: 0.4 }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: "Net Profit Growth Trend", font: { size: 20, weight: '700', family: 'Poppins' }, color: '#1e293b', padding: { bottom: 10 } },
+                         subtitle: { display: true, text: 'Joined: March 2021', font: { size: 14, family: 'Poppins' }, color: '#64748b', padding: { bottom: 20 } },
+                        tooltip: { enabled: true, backgroundColor: '#1e293b', padding: 12, cornerRadius: 8, displayColors: false, bodyFont: { family: 'Poppins' }, titleFont: { family: 'Poppins' }, callbacks: { label: (c) => `Net Profit: ${c.parsed.y.toLocaleString()}M ILS` } },
+                    },
+                    scales: { y: { min: 22, title: { display: true, text: 'Net Profit (in ILS Millions)', font: { family: 'Poppins' } }, ticks: { callback: (v) => v + 'M' } }, x: { grid: { display: false } } }
+                }
+            });
+
+            // --- Chart 3: SHAHAM Revenue ---
+            const revenueCtx = document.getElementById('shahamRevenueChart').getContext('2d');
+            const revenueGradient = revenueCtx.createLinearGradient(0, 0, 0, 400);
+            revenueGradient.addColorStop(0, 'rgba(34, 197, 94, 0.5)');
+            revenueGradient.addColorStop(1, 'rgba(34, 197, 94, 0)');
+
+            new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+                    datasets: [{ data: [2.16, 2.46, 2.70, 3.00, 3.87, 4.76, 4.75], fill: true, backgroundColor: revenueGradient, borderColor: '#22c55e', pointBackgroundColor: '#ffffff', pointBorderColor: '#22c55e', tension: 0.4 }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: "Revenue Growth", font: { size: 20, weight: '700', family: 'Poppins' }, color: '#1e293b', padding: { bottom: 10 } },
+                        subtitle: { display: true, text: 'Joined: September 2014', font: { size: 14, family: 'Poppins' }, color: '#64748b', padding: { bottom: 20 } },
+                        tooltip: { enabled: true, backgroundColor: '#1e293b', padding: 12, cornerRadius: 8, displayColors: false, bodyFont: { family: 'Poppins' }, titleFont: { family: 'Poppins' }, callbacks: { label: (c) => `Revenue: ${c.parsed.y.toLocaleString()}M ILS` } },
+                    },
+                    scales: { y: { beginAtZero: true, title: { display: true, text: 'Revenue (in ILS Millions)', font: { family: 'Poppins' } } }, x: { grid: { display: false } } }
+                }
+            });
+
+            // --- Chart 4: SHAHAM Surplus ---
+            const surplusCtx = document.getElementById('shahamSurplusChart').getContext('2d');
+            const surplusGradient = surplusCtx.createLinearGradient(0, 0, 0, 400);
+            surplusGradient.addColorStop(0, 'rgba(59, 130, 246, 0.5)');
+            surplusGradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
+
+            new Chart(surplusCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2015', '2016', '2017', '2018', '2019', '2020'],
+                    datasets: [{ data: [3.6, 70.4, 200.4, 533.8, 784.4, 750.7], fill: true, backgroundColor: surplusGradient, borderColor: '#3b82f6', pointBackgroundColor: '#ffffff', pointBorderColor: '#3b82f6', tension: 0.4 }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: "Organizational Stability - Surplus Growth", font: { size: 20, weight: '700', family: 'Poppins' }, color: '#1e293b', padding: { bottom: 10 } },
+                        subtitle: { display: true, text: 'Data from 2015 onwards', font: { size: 14, family: 'Poppins' }, color: '#64748b', padding: { bottom: 20 } },
+                        tooltip: { enabled: true, backgroundColor: '#1e293b', padding: 12, cornerRadius: 8, displayColors: false, bodyFont: { family: 'Poppins' }, titleFont: { family: 'Poppins' }, callbacks: { label: (c) => `Surplus: ${c.parsed.y.toLocaleString()}K ILS` } }
+                    },
+                    scales: { y: { beginAtZero: true, title: { display: true, text: 'Surplus (in ILS Thousands)', font: { family: 'Poppins' } }, ticks: { callback: (v) => v + 'K' } }, x: { grid: { display: false } } }
+                }
+            });
+
+            // --- Initialize Icons ---
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
+
