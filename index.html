@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ori Reshtik - Executive Portfolio</title>
+    <title>Ori Reshtik - AI Powered Executive Portfolio</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js -->
@@ -20,7 +20,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        .achievement-card, .chart-card, .press-card, .recognition-card, .video-card {
+        .achievement-card, .chart-card, .press-card, .recognition-card, .video-card, .ai-card {
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .achievement-card:hover, .chart-card:hover, .press-card:hover, .recognition-card:hover, .video-card:hover {
@@ -41,9 +41,52 @@
         .gradient-bg {
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         }
+        /* AI Pulse Animation */
+        .ai-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+        }
     </style>
 </head>
 <body class="gradient-bg text-slate-900">
+
+    <!-- AI Insight Modal Overlay -->
+    <div id="aiModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-sky-500"></div>
+            <button onclick="closeAIModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-violet-100 rounded-2xl flex items-center justify-center text-violet-600">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">Strategic Analysis</h3>
+                    <p class="text-slate-500 text-sm">Powered by AI Insight</p>
+                </div>
+            </div>
+
+            <div id="aiLoading" class="hidden flex flex-col items-center py-12">
+                <div class="w-12 h-12 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin mb-4"></div>
+                <p class="text-slate-600 font-medium italic">Analyzing professional history and strategic impact...</p>
+            </div>
+
+            <div id="aiResult" class="hidden">
+                <div class="prose prose-slate max-h-[60vh] overflow-y-auto pr-4 text-slate-700 leading-relaxed text-lg" id="aiContent">
+                    <!-- AI Content Injected Here -->
+                </div>
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-end">
+                    <button onclick="closeAIModal()" class="bg-slate-800 text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-900 transition-colors">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container mx-auto px-4 py-12 sm:py-20 fade-in">
 
@@ -51,29 +94,41 @@
         <section id="overview" class="mb-20">
             <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-slate-100">
                 <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                    <!-- Profile Picture -->
                     <div class="flex-shrink-0">
                         <img src="https://eshkolot.co.il/wp-content/uploads/2025/09/%D7%90%D7%95%D7%A8%D7%99-%D7%A8%D7%A9%D7%98%D7%99%D7%A7-%D7%A7%D7%A8%D7%93%D7%99%D7%98-%D7%90%D7%9E%D7%A0%D7%93%D7%94-%D7%A1%D7%95%D7%A8%D7%95%D7%93%D7%99-1.jpg" alt="Ori Reshtik" class="w-40 h-40 rounded-full object-cover ring-4 ring-offset-4 ring-violet-500 shadow-lg">
                     </div>
-                    <!-- Bio and Contact -->
-                    <div class="text-left">
+                    <div class="text-left flex-1">
                         <h1 class="text-4xl sm:text-5xl font-bold text-slate-800">Ori Reshtik</h1>
                         <p class="mt-4 text-lg text-slate-600 leading-relaxed max-w-4xl">
-                            Senior Executive specializing in strategic growth, with over 15 years of experience leading national organizations through business expansion, financial restructuring, and complex regulatory navigation. Expert in high-stakes negotiations and board-level decision-making, with a proven track record in revenue maximization, capital raising, and large-scale operational optimization.
+                            Senior Executive specializing in strategic growth, with over 15 years of experience leading national organizations through business expansion, financial restructuring, and complex regulatory navigation. Expert in high-stakes negotiations and board-level decision-making.
                         </p>
+                        
+                        <!-- AI Fit Analyzer Section -->
+                        <div class="mt-8 p-6 bg-violet-50 rounded-2xl border border-violet-100 ai-pulse group transition-all hover:bg-violet-100/50">
+                            <div class="flex flex-col md:flex-row items-center gap-4">
+                                <div class="flex-1 w-full">
+                                    <label class="text-sm font-bold text-violet-700 block mb-2 px-1">Check Ori's Strategic Fit for your Org:</label>
+                                    <input type="text" id="targetRole" placeholder="e.g. CEO of a Media Group, Tech Board Member..." class="w-full px-4 py-3 rounded-xl border-2 border-violet-200 focus:border-violet-500 focus:outline-none transition-all text-slate-800">
+                                </div>
+                                <button onclick="runAIAnalysis()" class="w-full md:w-auto mt-6 md:mt-0 whitespace-nowrap bg-violet-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-violet-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-violet-200">
+                                    <i data-lucide="zap" class="w-5 h-5"></i> Check it out for me ✨
+                                </button>
+                            </div>
+                        </div>
+
                          <!-- Contact Links -->
                         <div class="flex items-center flex-wrap gap-4 mt-8">
-                            <a href="https://wa.me/972528044478" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-green-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-green-600 transition-all hover:scale-105 shadow-md">
+                            <a href="https://wa.me/972528044478" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600 transition-all hover:scale-105 shadow-md">
                                 <i data-lucide="message-circle" class="w-5 h-5 mr-1"></i> WhatsApp
                             </a>
-                            <a href="mailto:orireshtik@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-red-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-red-600 transition-all hover:scale-105 shadow-md">
-                                <i data-lucide="mail" class="w-5 h-5 mr-1"></i> Email
+                            <a href="mailto:orireshtik@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-red-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-red-600 transition-all hover:scale-105 shadow-md">
+                                <i data-lucide="mail" class="w-5 h-5 ml-1"></i> Email
                             </a>
-                            <a href="https://www.linkedin.com/in/ori-reshtik/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-700 transition-all hover:scale-105 shadow-md">
-                                <i data-lucide="linkedin" class="w-5 h-5 mr-1"></i> LinkedIn
+                            <a href="https://www.linkedin.com/in/ori-reshtik/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition-all hover:scale-105 shadow-md">
+                                <i data-lucide="linkedin" class="w-5 h-5 ml-1"></i> LinkedIn
                             </a>
-                            <a href="tel:+972528044478" class="flex items-center gap-2 bg-slate-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-slate-800 transition-all hover:scale-105 shadow-md">
-                                <i data-lucide="phone" class="w-5 h-5 mr-1"></i> Phone
+                            <a href="tel:+972528044478" class="flex items-center gap-2 bg-slate-700 text-white font-semibold px-4 py-2 rounded-full hover:bg-slate-800 transition-all hover:scale-105 shadow-md">
+                                <i data-lucide="phone" class="w-5 h-5 ml-1"></i> Phone
                             </a>
                         </div>
                     </div>
@@ -84,7 +139,7 @@
                          <img src="https://res.cloudinary.com/globes/image/upload/f_auto/v1609311634/Digital/40%20%D7%A2%D7%9C%2040/logo-red_elh3zm.svg" alt="40 under 40" class="h-16">
                         <div>
                             <p class="font-bold text-slate-800 text-lg underline decoration-red-500/30">Named in Globes' "40 Under 40" List</p>
-                            <p class="text-slate-600">Selected as one of Israel's most promising young leaders for 2020.</p>
+                            <p class="text-slate-600 font-light">Selected as one of Israel's most promising young leaders for 2020.</p>
                             <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 mt-2">Read the full feature on Globes <i data-lucide="external-link" class="w-3 h-3"></i></span>
                         </div>
                         <img src="https://www.ophirlaw.com/wp-content/uploads/2022/11/Globes-Logo.png" alt="Globes Logo" class="h-8 sm:mr-auto opacity-80 group-hover:opacity-100">
@@ -95,7 +150,6 @@
 
         <!-- Eshkolot Section -->
         <section id="eshkolot" class="mb-24">
-             <!-- Symmetrical Header: Logo & Title side-by-side -->
              <div class="flex flex-col items-center mb-16">
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
                     <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-50">
@@ -175,7 +229,6 @@
 
         <!-- SHAHAM Section -->
         <section id="shaham" class="mb-24">
-            <!-- Symmetrical Header: Logo & Title side-by-side -->
             <div class="flex flex-col items-center mb-16">
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
                     <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-50">
@@ -234,7 +287,7 @@
             </div>
         </section>
 
-        <!-- Additional Roles Section -->
+        <!-- Additional Roles -->
         <section id="additional-roles" class="mb-24">
             <div class="text-center mt-24 mb-16"><h2 class="text-4xl sm:text-5xl font-bold text-slate-800 tracking-tight">Key Roles & Board Experience</h2></div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -255,25 +308,10 @@
                     <h4 class="text-xl font-bold text-slate-800 mb-2">Director, ISSTA Lines (Public Co.)</h4>
                     <p class="text-slate-600 font-light text-sm">Served on boards of the ISSTA Group and subsidiaries (Real Estate, American Express Travel). Involved in Board-level decision-making for a publicly traded company.</p>
                 </div>
-                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg border border-slate-50">
-                    <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6 shadow-inner"><i data-lucide="university" class="w-8 h-8"></i></div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2">Member, Council for Higher Education (CHE)</h4>
-                    <p class="text-slate-600 font-light text-sm">Serving in the statutory body managing Israel's higher education policy. Member of budget policy, supervision, and enforcement committees (2013-2015).</p>
-                </div>
-                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg border border-slate-50">
-                    <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6 shadow-inner"><i data-lucide="landmark" class="w-8 h-8"></i></div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2">Public Official, Givatayim Municipality</h4>
-                    <p class="text-slate-600 font-light text-sm">Member of the city administration and the planning and building committee. Leading infrastructure initiatives and strategic urban development (2008-2018).</p>
-                </div>
-                <div class="achievement-card bg-white p-8 rounded-2xl shadow-lg border border-slate-50">
-                    <div class="w-16 h-16 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center mb-6 shadow-inner"><i data-lucide="school" class="w-8 h-8"></i></div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-2">Chairperson, Student Union (TAU)</h4>
-                    <p class="text-slate-600 font-light text-sm">Managing a complex organization with an annual turnover of approx. 48M ILS. Leading a staff of 80 employees and optimizing service delivery (2010-2012).</p>
-                </div>
             </div>
         </section>
 
-        <!-- Final Recognition Section -->
+        <!-- Final Recognition Section (Lions) -->
         <section id="lions-award">
              <a href="https://www.youtube.com/watch?v=xtX4ZwaOJfE&t=7s" target="_blank" rel="noopener noreferrer" class="recognition-card block group">
                 <div class="bg-white rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 shadow-lg border border-slate-50 group-hover:bg-slate-50 transition-colors">
@@ -287,7 +325,7 @@
             </a>
         </section>
 
-        <!-- Footer / Contact Information -->
+        <!-- Footer / Contact Section (Perfectly Symmetrical) -->
         <footer class="w-full text-center py-16 mt-24 border-t border-slate-200 bg-white rounded-t-[4rem]">
              <h3 class="text-3xl font-bold text-slate-800 mb-12 tracking-tight">Contact Information</h3>
              <div class="flex items-center justify-center gap-x-12 mb-10 max-w-sm mx-auto">
@@ -314,23 +352,92 @@
     </div>
 
     <script>
+        // --- Gemini API Integration ---
+        const apiKey = ""; 
+
+        async function runAIAnalysis() {
+            const role = document.getElementById('targetRole').value;
+            if (!role) {
+                alert("Please enter a target role or company description.");
+                return;
+            }
+
+            openAIModal();
+            
+            const systemPrompt = `You are a high-level AI Executive Consultant. Analyze Ori Reshtik's professional profile and explain why he is the perfect strategic fit for the user's role/company.
+            Ori's Highlights:
+            - CEO of Eshkolot: 50% revenue growth, IP expert, regulatory master.
+            - CEO of SHAHAM: 40% client base growth, historic labor agreements.
+            - Chairman of Mei Givatayim: "Outstanding" utility status.
+            - Expert in Government Relations, Public Policy, and AI/Data.
+            - Globes 40 Under 40.
+            
+            Format: Write a professional Strategic Fit Analysis (200 words). Use executive language. 3-4 bullet points and a closing statement. Focus on how his specific skills (regulation, IP, scaling) benefit the context provided.`;
+
+            const userQuery = `Target Context: ${role}. Explain Ori's fit.`;
+
+            try {
+                const response = await fetchWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: userQuery }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] }
+                    })
+                });
+
+                const result = await response.json();
+                const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "No analysis generated. Please try again.";
+                
+                document.getElementById('aiLoading').classList.add('hidden');
+                document.getElementById('aiResult').classList.remove('hidden');
+                document.getElementById('aiContent').innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                
+            } catch (error) {
+                document.getElementById('aiLoading').classList.add('hidden');
+                document.getElementById('aiResult').classList.remove('hidden');
+                document.getElementById('aiContent').innerHTML = "<span class='text-red-500'>Error connecting to AI service. Please try again later.</span>";
+            }
+        }
+
+        async function fetchWithRetry(url, options, retries = 5, backoff = 1000) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) return response;
+                } catch (e) {}
+                await new Promise(res => setTimeout(res, backoff * Math.pow(2, i)));
+            }
+            throw new Error("API Max retries reached");
+        }
+
+        function openAIModal() {
+            document.getElementById('aiModal').classList.remove('hidden');
+            document.getElementById('aiLoading').classList.remove('hidden');
+            document.getElementById('aiResult').classList.add('hidden');
+        }
+
+        function closeAIModal() {
+            document.getElementById('aiModal').classList.add('hidden');
+        }
+
+        // --- Charts & UI ---
         document.addEventListener('DOMContentLoaded', () => {
             const entryAnimation = { duration: 2500, easing: 'easeOutElastic', delay: (context) => context.dataIndex * 150 };
             const getGradient = (ctx, colorStart, colorEnd) => { const gradient = ctx.createLinearGradient(0, 0, 0, 400); gradient.addColorStop(0, colorStart); gradient.addColorStop(1, colorEnd); return gradient; };
-            const sharedOptions = { responsive: true, maintainAspectRatio: false, animation: entryAnimation, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(15, 23, 42, 0.9)', padding: 16, cornerRadius: 12, displayColors: false, titleFont: { family: 'Assistant', size: 14 } } }, scales: { x: { grid: { display: false }, ticks: { font: { family: 'Assistant' } } }, y: { grid: { color: 'rgba(226, 232, 240, 0.5)' }, ticks: { font: { family: 'Assistant' } } } } };
+            const sharedOptions = { responsive: true, maintainAspectRatio: false, animation: entryAnimation, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(15, 23, 42, 0.9)', padding: 16, cornerRadius: 12, displayColors: false } }, scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(226, 232, 240, 0.5)' } } } };
 
-            // --- Charts ---
             const eshkolotRevCtx = document.getElementById('eshkolotRevenueChart').getContext('2d');
-            new Chart(eshkolotRevCtx, { type: 'line', data: { labels: ['2020', '2021', '2022', '2023', '2024', '2025 (F)'], datasets: [{ data: [31.6, 36.4, 35.3, 37.2, 40.1, 45], fill: true, backgroundColor: getGradient(eshkolotRevCtx, 'rgba(56, 189, 248, 0.4)', 'rgba(56, 189, 248, 0)'), borderColor: '#0284c7', borderWidth: 4, pointRadius: 6, tension: 0.45 }] }, options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { display: true, text: 'Eshkolot Revenue Growth (M ILS)', font: { size: 18, family: 'Assistant', weight: 'bold' } } } } });
+            new Chart(eshkolotRevCtx, { type: 'line', data: { labels: ['2020', '2021', '2022', '2023', '2024', '2025 (F)'], datasets: [{ data: [31.6, 36.4, 35.3, 37.2, 40.1, 45], fill: true, backgroundColor: getGradient(eshkolotRevCtx, 'rgba(56, 189, 248, 0.4)', 'rgba(56, 189, 248, 0)'), borderColor: '#0284c7', borderWidth: 4, pointRadius: 6, tension: 0.45 }] }, options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { display: true, text: 'Revenue Growth (M ILS)', font: { size: 18, family: 'Assistant', weight: 'bold' } } } } });
             
             const eshkolotProfitCtx = document.getElementById('eshkolotNetProfitChart').getContext('2d');
             new Chart(eshkolotProfitCtx, { type: 'line', data: { labels: ['2020', '2021', '2022', '2023', '2024', '2025 (F)'], datasets: [{ data: [23.1, 25.5, 25.6, 26.3, 30.1, 33], fill: true, backgroundColor: getGradient(eshkolotProfitCtx, 'rgba(16, 185, 129, 0.4)', 'rgba(16, 185, 129, 0)'), borderColor: '#10b981', borderWidth: 4, pointRadius: 6, tension: 0.45 }] }, options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { display: true, text: 'Net Profit Trend (M ILS)', font: { size: 18, family: 'Assistant', weight: 'bold' } } } } });
 
             const revenueCtx = document.getElementById('shahamRevenueChart').getContext('2d');
-            new Chart(revenueCtx, { type: 'line', data: { labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020'], datasets: [{ data: [2.16, 2.46, 2.70, 3.00, 3.87, 4.76, 4.75], fill: true, backgroundColor: getGradient(revenueCtx, 'rgba(139, 92, 246, 0.4)', 'rgba(139, 92, 246, 0)'), borderColor: '#8b5cf6', borderWidth: 4, pointRadius: 6, tension: 0.4 }] }, options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { display: true, text: 'SHAHAM Revenue Growth (M ILS)', font: { size: 18, family: 'Assistant', weight: 'bold' } } } } });
+            new Chart(revenueCtx, { type: 'line', data: { labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020'], datasets: [{ data: [2.16, 2.46, 2.70, 3.00, 3.87, 4.76, 4.75], fill: true, backgroundColor: getGradient(revenueCtx, 'rgba(139, 92, 246, 0.4)', 'rgba(139, 92, 246, 0)'), borderColor: '#8b5cf6', borderWidth: 4, pointRadius: 6, tension: 0.4 }] }, options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { display: true, text: 'SHAHAM Revenue (M ILS)', font: { size: 18, family: 'Assistant', weight: 'bold' } } } } });
 
             const surplusCtx = document.getElementById('shahamSurplusChart').getContext('2d');
-            new Chart(surplusCtx, { type: 'line', data: { labels: ['2015', '2016', '2017', '2018', '2019', '2020'], datasets: [{ data: [3.6, 70.4, 200.4, 533.8, 784.4, 750.7], fill: true, backgroundColor: getGradient(surplusCtx, 'rgba(59, 130, 246, 0.4)', 'rgba(59, 130, 246, 0)'), borderColor: '#3b82f6', borderWidth: 4, pointRadius: 6, tension: 0.4 }] }, options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { display: true, text: 'SHAHAM Surplus Trend (K ILS)', font: { size: 18, family: 'Assistant', weight: 'bold' } } } } });
+            new Chart(surplusCtx, { type: 'line', data: { labels: ['2015', '2016', '2017', '2018', '2019', '2020'], datasets: [{ data: [3.6, 70.4, 200.4, 533.8, 784.4, 750.7], fill: true, backgroundColor: getGradient(surplusCtx, 'rgba(59, 130, 246, 0.4)', 'rgba(59, 130, 246, 0)'), borderColor: '#3b82f6', borderWidth: 4, pointRadius: 6, tension: 0.4 }] }, options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { display: true, text: 'SHAHAM Surplus (K ILS)', font: { size: 18, family: 'Assistant', weight: 'bold' } } } } });
 
             lucide.createIcons();
         });
