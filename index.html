@@ -5,12 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ori Reshtik - Executive Portfolio</title>
+    <meta name="description"
+        content="Senior executive specializing in strategy and organizational growth, with more than 15 years of experience leading corporations in the private and public sectors.">
+    <meta name="author" content="Ori Reshtik">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://orireshtik.github.io/orireshtikeng/">
+    <link rel="icon" href="https://orireshtik.github.io/orireshtikheb/og-image.jpg?v=2" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://orireshtik.github.io/orireshtikheb/og-image.jpg?v=2">
+    <!-- Open Graph: Facebook, WhatsApp, LinkedIn, Telegram, Slack, Discord, iMessage -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="he_IL">
+    <meta property="og:url" content="https://orireshtik.github.io/orireshtikeng/">
+    <meta property="og:site_name" content="Ori Reshtik - Executive Portfolio">
+    <meta property="og:title" content="Ori Reshtik - Executive Portfolio">
+    <meta property="og:description"
+        content="Senior executive specializing in strategy and organizational growth, with more than 15 years of experience leading corporations in the private and public sectors. Expert in business development, financial restructuring, and complex financial management.">
+    <meta property="og:image" content="https://orireshtik.github.io/orireshtikheb/og-image.jpg?v=2">
+    <meta property="og:image:secure_url" content="https://orireshtik.github.io/orireshtikheb/og-image.jpg?v=2">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="Ori Reshtik — profile photo">
+    <meta property="og:updated_time" content="2026-05-19T00:00:00+03:00">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ori Reshtik - Executive Portfolio">
+    <meta name="twitter:description"
+        content="Senior executive specializing in strategy and organizational growth, with more than 15 years of experience leading corporations in the private and public sectors.">
+    <meta name="twitter:image" content="https://orireshtik.github.io/orireshtikheb/og-image.jpg?v=2">
+    <meta name="twitter:image:alt" content="Ori Reshtik — profile photo">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ori Reshtik",
+        "url": "https://orireshtik.github.io/orireshtikeng/",
+        "image": "https://orireshtik.github.io/orireshtikheb/og-image.jpg?v=2",
+        "description": "Senior executive specializing in strategy and organizational growth, with more than 15 years of experience leading corporations in the private and public sectors.",
+        "jobTitle": "Senior Executive",
+        "sameAs": [
+            "https://www.linkedin.com/in/ori-reshtik/"
+        ]
+    }
+    </script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -181,6 +225,16 @@
             stroke-width: 3 !important;
         }
 
+        .media-video-card-play {
+            opacity: 0.92;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .media-video-card:hover .media-video-card-play {
+            opacity: 1;
+            transform: scale(1.06);
+        }
+
         .skills-matrix-modal-shell .modal-content>div:first-child::after {
             content: "✦ Selected Examples";
             display: inline-flex;
@@ -201,10 +255,16 @@
     </style>
 </head>
 
-<body class="gradient-bg text-slate-900 overflow-x-hidden text-left">
+<body class="gradient-bg text-slate-900 overflow-x-hidden overflow-y-hidden text-left">
+
+    <section id="social-link-preview" class="sr-only" aria-hidden="true">
+        <h1>Ori Reshtik - Executive Portfolio</h1>
+        <p>Senior executive specializing in strategy and organizational growth, with more than 15 years of experience leading corporations in the private and public sectors.</p>
+        <img src="https://orireshtik.github.io/orireshtikheb/og-image.jpg?v=2" width="1200" height="1200" alt="Ori Reshtik">
+    </section>
 
     <div id="first-visit-modal"
-        class="custom-modal fixed inset-0 z-[3000] hidden items-start sm:items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
+        class="custom-modal modal-active fixed inset-0 z-[3000] flex items-start sm:items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
         <div
             class="modal-content relative my-auto max-h-[calc(100vh-1.5rem)] w-full max-w-4xl overflow-y-auto rounded-[1.5rem] border border-white/70 bg-white shadow-2xl custom-scrollbar sm:max-h-[calc(100vh-2rem)] sm:rounded-[2rem]">
             <button id="first-visit-close-button" type="button"
@@ -301,6 +361,12 @@
                             </div>
                         </div>
                     </div>
+                    <button type="button" id="media-appearances-trigger"
+                        class="flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#FF0000] px-5 py-3.5 text-sm font-black text-white shadow-lg shadow-red-200/60 transition hover:-translate-y-0.5 hover:bg-[#E62117] hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+                        aria-label="Media appearances — watch videos">
+                        <i data-lucide="youtube" class="h-6 w-6 shrink-0" aria-hidden="true"></i>
+                        <span>Media Appearances</span>
+                    </button>
                     <div class="grid gap-3 lg:grid-cols-2">
                         <a href="#contact" id="first-visit-contact-btn"
                             class="flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-3 text-center text-sm font-black text-slate-800 shadow-sm transition hover:bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-300">
@@ -315,6 +381,27 @@
                     </div>
                 </div>
             </div>
+            <p
+                class="border-t border-slate-100 px-4 py-2.5 text-center text-[0.65rem] leading-relaxed text-slate-400/90 sm:px-8">
+                Built by Ori using AI
+                <span class="mx-1 inline-flex align-middle gap-1.5" aria-label="Gemini, Claude, Cursor">
+                    <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer"
+                        class="opacity-60 transition hover:opacity-100" title="Gemini">
+                        <img src="https://cdn.simpleicons.org/googlegemini/94a3b8" alt="Gemini" class="h-3.5 w-3.5"
+                            width="14" height="14" loading="lazy">
+                    </a>
+                    <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer"
+                        class="opacity-60 transition hover:opacity-100" title="Claude">
+                        <img src="https://cdn.simpleicons.org/claude/94a3b8" alt="Claude" class="h-3.5 w-3.5"
+                            width="14" height="14" loading="lazy">
+                    </a>
+                    <a href="https://cursor.com/" target="_blank" rel="noopener noreferrer"
+                        class="opacity-60 transition hover:opacity-100" title="Cursor">
+                        <img src="https://cdn.simpleicons.org/cursor/94a3b8" alt="Cursor" class="h-3.5 w-3.5"
+                            width="14" height="14" loading="lazy">
+                    </a>
+                </span>
+            </p>
         </div>
     </div>
 
@@ -342,7 +429,7 @@
 
         <!-- Main trigger button -->
         <button id="cv-download-btn"
-            onclick="(function(){var d=document.getElementById('cv-dropdown');d.classList.toggle('hidden');})()"
+            onclick="(function(){var d=document.getElementById('cv-dropdown');if(d)d.classList.toggle('hidden');})()"
             class="flex items-center gap-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-5 py-3 rounded-2xl shadow-xl shadow-indigo-300/50 font-bold text-sm transition-all hover:scale-105 active:scale-95 cursor-pointer">
             <i data-lucide="file-down" class="w-5 h-5 flex-shrink-0"></i>
             Download CV (PDF)
@@ -352,6 +439,182 @@
 
 
     <!-- MODAL CONTAINERS -->
+
+    <!-- Media appearances -->
+    <div id="media-appearances-modal"
+        class="custom-modal fixed inset-0 z-[3100] hidden items-start sm:items-center justify-center p-3 sm:p-4 bg-slate-900/75 backdrop-blur-sm overflow-y-auto">
+        <div
+            class="modal-content relative my-auto w-full max-w-5xl overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-2xl sm:rounded-[2rem]">
+            <div class="relative bg-[#FF0000] px-5 py-5 text-white sm:px-7 sm:py-6">
+                <button id="media-appearances-close-x" type="button"
+                    class="absolute top-3 end-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/15 text-white transition hover:bg-white/30 sm:top-4 sm:end-4"
+                    aria-label="Close media appearances">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+                <div class="flex flex-wrap items-center gap-3 pe-12">
+                    <svg class="h-9 w-9 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="#fff"
+                            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .6 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.3.6 9.3.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8z" />
+                        <path fill="#FF0000" d="M9.75 15.02l6.19-3.51-6.19-3.51v7.02z" />
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-black leading-tight sm:text-2xl">Media Appearances</h3>
+                        <p class="mt-1 text-xs font-semibold text-white/90 sm:text-sm">Interviews, articles and profiles — for example</p>
+                    </div>
+                </div>
+            </div>
+            <div class="max-h-[min(70vh,42rem)] overflow-y-auto custom-scrollbar p-4 sm:p-6">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <a href="https://www.youtube.com/watch?v=v6Dm5s9ATXE"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/v6Dm5s9ATXE/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Interview on Atzmai BaShetach — 102FM</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=PwFIXCexxQQ"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/PwFIXCexxQQ/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Personal interview with Raz Shachnick on management achievements</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=LDyGlJG70wA"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/LDyGlJG70wA/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Profile piece on Ori Reshtik</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=_SaC21TpP8Q"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/_SaC21TpP8Q/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Conversation with Gadi Soknik — pension buying group</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=xtX4ZwaOJfE"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/xtX4ZwaOJfE/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Lions Club Gor Aryeh — Man of the Year 2011/2012</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=-BYkBCTlAbw"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/-BYkBCTlAbw/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Student–senior co-living housing project</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=Xf23CSh70ZU"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/Xf23CSh70ZU/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">College vs. university — which path to choose?</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=X5KgR6B1SqA"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/X5KgR6B1SqA/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Interview on Radius 100FM</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=L0BCpaU6jog"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/L0BCpaU6jog/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Unemployment benefits for self-employed workers</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=_ghJhHGB6Ws"
+                        class="media-video-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:border-red-200 hover:shadow-md">
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.ytimg.com/vi/_ghJhHGB6Ws/hqdefault.jpg" alt="" loading="lazy"
+                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+                            <span
+                                class="media-video-card-play pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/25">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg">
+                                    <i data-lucide="play" class="h-6 w-6 fill-white"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="p-3 text-sm font-bold leading-snug text-slate-800 text-left">Achad SheYodaat — Keshet</p>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 bg-slate-50 px-4 py-3 sm:px-6">
+                <button id="media-appearances-close-btn" type="button"
+                    class="w-full rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-black text-white transition hover:bg-slate-800">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- ESHKOLOT Modal -->
     <div id="eshkolot-modal"
@@ -1176,14 +1439,14 @@
                             class="font-semibold text-sky-700 underline decoration-sky-200 underline-offset-2 hover:text-sky-900">50% Revenue Growth at Eshkolot</a></li>
                     <li class="text-left"><a href="#shaham-pnl-training"
                             class="font-semibold text-sky-700 underline decoration-sky-200 underline-offset-2 hover:text-sky-900">P&L Unit Establishment: Professional Training Division at SHAHAM</a></li>
-                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="role-nuis"
                             class="font-semibold text-sky-700 underline decoration-sky-200 underline-offset-2 hover:text-sky-900">National Union of Israeli Students</a> — Yielding real estate and business branches for social investments.</li>
                     <li class="text-left"><a href="#eshkolot-global-trigger" data-modal-trigger="eshkolot-global-trigger"
                             class="font-semibold text-sky-700 underline decoration-sky-200 underline-offset-2 hover:text-sky-900">Expansion
                             Strategic for global markets in Eshkolot</a> — Development of income channels and international expansion vis-a-vis foreign markets.</li>
                     <li class="text-left"><span class="font-semibold text-sky-900">Marketing, digital and campaigns</span> —
                         Management of external marketing providers, campaigns, content guidance and activation of digital growth channels.</li>
-                    <li class="text-left"><a href="#role-tau-aguda" data-modal-trigger="tau-info-trigger"
+                    <li class="text-left"><a href="#role-tau-aguda" data-modal-trigger="role-tau-aguda"
                             class="font-semibold text-sky-700 underline decoration-sky-200 underline-offset-2 hover:text-sky-900">Expansion
                             Subsidiaries and products in the student union at Tel Aviv University</a></li>
                 </ul>
@@ -1229,7 +1492,7 @@
                     <li class="text-left"><a href="#shaham-agreements-trigger" data-modal-trigger="shaham-agreements-trigger"
                             class="font-semibold text-indigo-700 underline decoration-indigo-200 underline-offset-2 hover:text-indigo-900">Diversity
                             Activity channels and strategic agreements in SHAHAM</a> — Expansion of activity and strategic engagement agreements.</li>
-                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="role-nuis"
                             class="font-semibold text-indigo-700 underline decoration-indigo-200 underline-offset-2 hover:text-indigo-900">Initiatives
                             Social and economic at the National Union of Israeli Students</a></li>
                 </ul>
@@ -1270,11 +1533,11 @@
                     <li class="text-left"><a href="#shaham-growth-trigger" data-modal-trigger="shaham-growth-trigger"
                             class="font-semibold text-violet-700 underline decoration-violet-200 underline-offset-2 hover:text-violet-900">SHAHAM
                             — Executive management and growth</a> — Transformation, +40% in customer base.</li>
-                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="role-nuis"
                             class="font-semibold text-violet-700 underline decoration-violet-200 underline-offset-2 hover:text-violet-900">National Union of Israeli Students</a> — An umbrella organization for ~330,000 young people.</li>
                     <li class="text-left"><span class="font-semibold text-violet-900">Community project management</span> —
                         Building a budget and schedules, coordinating and synchronizing with various parties and motivating to meet goals.</li>
-                    <li class="text-left"><a href="#role-tau-aguda" data-modal-trigger="tau-info-trigger"
+                    <li class="text-left"><a href="#role-tau-aguda" data-modal-trigger="role-tau-aguda"
                             class="font-semibold text-violet-700 underline decoration-violet-200 underline-offset-2 hover:text-violet-900">Association
                             Tel Aviv University Student Union</a> — Organizational skeleton ~80 employees.</li>
                     <li class="text-left"><a href="#givatayim-info-trigger" data-modal-trigger="givatayim-info-trigger"
@@ -1314,10 +1577,10 @@
                     <li class="text-left"><a href="#eshlam-project"
                             class="font-semibold text-emerald-800 underline decoration-emerald-200 underline-offset-2 hover:text-emerald-950">Eshkolot
                             — Establishing a JV and establishing a revenue model</a> — Establishing a strategic joint venture to change the revenue model.</li>
-                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="role-nuis"
                             class="font-semibold text-emerald-800 underline decoration-emerald-200 underline-offset-2 hover:text-emerald-950">Group
                             Membership in the National Union of Israeli Students</a> — Establishment of subsidiaries and business branches.</li>
-                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="role-nuis"
                             class="font-semibold text-emerald-800 underline decoration-emerald-200 underline-offset-2 hover:text-emerald-950">Presidency
                             Board in subsidiaries</a> — At the National Union of Israeli Students.</li>
                     <li class="text-left"><a href="#shaham-neshama-trigger" data-modal-trigger="shaham-neshama-trigger"
@@ -1459,7 +1722,7 @@
                             class="font-semibold text-rose-800 underline decoration-rose-200 underline-offset-2 hover:text-rose-950">Knesset and Government Advocacy</a> — Discussions in committees with regulators, huge corporations and government representatives.</li>
                     <li class="text-left"><a href="#eshkolot-ip-trigger" data-modal-trigger="eshkolot-ip-trigger"
                             class="font-semibold text-rose-800 underline decoration-rose-200 underline-offset-2 hover:text-rose-950">Supreme Court Petition (2021)</a> — A precedent petition for the inclusion of smart edge equipment in compensation mechanisms for intellectual property.</li>
-                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="role-nuis"
                             class="font-semibold text-rose-800 underline decoration-rose-200 underline-offset-2 hover:text-rose-950">Dormitory and Periphery Student Budgets</a> — Raising and releasing national budgets at the National Union of Israeli Students.</li>
                     <li class="text-left"><a href="#shaham-international-trigger" data-modal-trigger="shaham-international-trigger"
                             class="font-semibold text-rose-800 underline decoration-rose-200 underline-offset-2 hover:text-rose-950">BDS Counter-Campaign</a> — Crisis management in the face of attempts to cancel the FIA ​​European conference in Israel.</li>
@@ -1505,7 +1768,7 @@
                     <li class="text-left"><a href="#shaham-growth-trigger" data-modal-trigger="shaham-growth-trigger"
                             class="font-semibold text-blue-800 underline decoration-blue-200 underline-offset-2 hover:text-blue-950">CRM
                             in SHAHAM</a> — To improve customer service and retention.</li>
-                    <li class="text-left"><a href="#role-tau-aguda" data-modal-trigger="tau-info-trigger"
+                    <li class="text-left"><a href="#role-tau-aguda" data-modal-trigger="role-tau-aguda"
                             class="font-semibold text-blue-800 underline decoration-blue-200 underline-offset-2 hover:text-blue-950">Digitization
                             in the student union.</a></li>
                     <li class="text-left"><a href="#eshkolot-revenue-trigger" data-modal-trigger="eshkolot-revenue-trigger"
@@ -1623,7 +1886,7 @@
                     <li class="text-left"><a href="#eshkolot-charts"
                             class="font-semibold text-teal-800 underline decoration-teal-200 underline-offset-2 hover:text-teal-950">Reorganization
                             in Eshkolot</a> — From a business risk situation to financial strength and accelerated growth.</li>
-                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="role-nuis"
                             class="font-semibold text-teal-800 underline decoration-teal-200 underline-offset-2 hover:text-teal-950">Recovery
                             National Union of Israeli Students</a> — Recovery and growth plan for the national umbrella organization.</li>
                     <li class="text-left"><a href="#shaham-growth-trigger" data-modal-trigger="shaham-growth-trigger"
@@ -1670,7 +1933,7 @@
                     <li class="text-left"><a href="#shaham-agreements-trigger" data-modal-trigger="shaham-agreements-trigger"
                             class="font-semibold text-orange-900 underline decoration-orange-200 underline-offset-2 hover:text-orange-950">Diversity
                             roads in SHAHAM</a> — Expansion of activity and strategic engagement agreements.</li>
-                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                    <li class="text-left"><a href="#role-nuis" data-modal-trigger="role-nuis"
                             class="font-semibold text-orange-900 underline decoration-orange-200 underline-offset-2 hover:text-orange-950">Management
                             Negotiations with the Ministry of Finance</a> — To release the budget of technological colleges and student dormitories.</li>
                     <li class="text-left"><a href="#eshkolot-global-trigger" data-modal-trigger="eshkolot-global-trigger"
@@ -2593,7 +2856,7 @@
                                 WhatsApp
                             </a>
                             <a href="https://drive.google.com/uc?export=download&id=1gAb5XWHSZ-iA1mHvCHb8Ausu7Eh3X5jD"
-                                target="_blank" rel="noopener noreferrer" type="text/vcard"
+                                target="_blank" rel="noopener noreferrer"
                                 class="flex items-center gap-2 bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-700 transition-all hover:scale-105 shadow-md">
                                 <i data-lucide="contact-round" class="w-5 h-5 ms-1"></i> Save Contact
                             </a>
@@ -2614,6 +2877,12 @@
                                 class="flex items-center gap-2 bg-slate-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-slate-800 transition-all hover:scale-105 shadow-md">
                                 <i data-lucide="phone" class="w-5 h-5 ms-1"></i> Phone
                             </a>
+                            <button type="button" id="media-appearances-trigger-hero"
+                                class="flex items-center gap-2 bg-[#FF0000] text-white font-bold px-6 py-3 rounded-full shadow-lg shadow-red-200/50 transition-all hover:scale-105 hover:bg-[#E62117] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+                                aria-label="Media appearances — watch videos">
+                                <i data-lucide="youtube" class="h-5 w-5 shrink-0" aria-hidden="true"></i>
+                                Media Appearances
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -2688,7 +2957,7 @@
                                 class="min-w-0 flex-1 font-semibold text-sky-800 underline decoration-sky-200 underline-offset-2 hover:text-sky-950">Chairman,
                                 Mei Givatayim Board of Directors</a></li>
                         <li class="flex gap-2"><span class="w-8 shrink-0 font-black text-indigo-600">14.</span><a
-                                href="#role-nuis" data-modal-trigger="nuis-info-trigger"
+                                href="#role-nuis" data-modal-trigger="role-nuis"
                                 class="min-w-0 flex-1 font-semibold text-sky-800 underline decoration-sky-200 underline-offset-2 hover:text-sky-950">Chair,
                                 National Union of Israeli Students</a></li>
                         <li class="flex gap-2"><span class="w-8 shrink-0 font-black text-indigo-600">15.</span><a
@@ -2704,7 +2973,7 @@
                                 class="min-w-0 flex-1 font-semibold text-sky-800 underline decoration-sky-200 underline-offset-2 hover:text-sky-950">Public
                                 representative in Givatayim Municipality</a></li>
                         <li class="flex gap-2"><span class="w-8 shrink-0 font-black text-indigo-600">18.</span><a
-                                href="#role-tau-aguda" data-modal-trigger="tau-info-trigger"
+                                href="#role-tau-aguda" data-modal-trigger="role-tau-aguda"
                                 class="min-w-0 flex-1 font-semibold text-sky-800 underline decoration-sky-200 underline-offset-2 hover:text-sky-950">Chair,
                                 Tel Aviv University Student Union</a></li>
                         <li class="flex gap-2"><span class="w-8 shrink-0 font-black text-indigo-600">19.</span><a
@@ -2977,7 +3246,7 @@
                                 </div>
                             </button>
                             <a href="#eshlam-project"
-                                onclick="document.getElementById('subsidiaries-dropdown').classList.add('hidden'); document.getElementById('subsidiaries-icon').classList.remove('rotate-180');"
+                                onclick="(function(){var d=document.getElementById('subsidiaries-dropdown');var i=document.getElementById('subsidiaries-icon');if(d)d.classList.add('hidden');if(i)i.classList.remove('rotate-180');})()"
                                 class="w-full px-4 py-3 hover:bg-violet-50 transition-colors flex items-start gap-3 focus:outline-none text-left cursor-pointer">
                                 <i data-lucide="rocket" class="w-4 h-4 text-violet-500 mt-0.5 flex-shrink-0"></i>
                                 <div>
@@ -3601,7 +3870,7 @@
                                     title="Ynet Podcast — Vision, Influence and Leadership (Ori Reshtik)" frameborder="0" allowfullscreen loading="lazy"></iframe>
                             </div>
                             <div class="mt-5 flex flex-col items-center sm:mt-6">
-                                <a href="https://www.youtube.com/watch?v=PwFIXCexxQQ" target="_blank"
+                                <a href="https://www.youtube.com/watch?v=PwFIXCexxQQ"
                                     rel="noopener noreferrer"
                                     class="inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:bg-red-700 hover:shadow-lg sm:text-base">
                                     <i data-lucide="play-circle" class="h-5 w-5 shrink-0"></i> Watch on YouTube
@@ -3805,7 +4074,7 @@
             </div>
         </button>
 
-        <a id="shaham-market-leader-card" href="https://www.youtube.com/watch?v=9FQuylS6b5I" target="_blank" rel="noopener noreferrer"
+        <a id="shaham-market-leader-card" href="https://www.youtube.com/watch?v=9FQuylS6b5I" rel="noopener noreferrer"
             class="achievement-card scroll-mt-28 cursor-pointer bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col h-full group hover:shadow-2xl hover:border-rose-300 hover:ring-4 hover:ring-rose-50 transition-all text-left focus:outline-none w-full relative overflow-hidden">
             <div
                 class="w-20 h-16 overflow-hidden bg-white rounded-xl flex items-center justify-center mb-6 shadow-inner ring-1 ring-rose-100 group-hover:scale-110 transition-transform relative z-10">
@@ -4052,8 +4321,9 @@
 
             <!-- NUIS -->
             <div id="role-nuis"
-                class="achievement-card scroll-mt-24 bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col h-full group transition-all relative cursor-pointer hover:shadow-2xl hover:border-blue-300 hover:ring-4 hover:ring-blue-50 text-left">
-                <div id="nuis-info-trigger" class="flex-1 flex flex-col">
+                class="achievement-card scroll-mt-24 bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col h-full group transition-all relative cursor-pointer hover:shadow-2xl hover:border-blue-300 hover:ring-4 hover:ring-blue-50 text-left"
+                tabindex="0" role="button" aria-label="NUIS — view summary">
+                <div class="flex-1 flex flex-col">
                     <div
                         class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-inner border border-slate-100">
                         <img src="https://upload.wikimedia.org/wikipedia/he/e/eb/NUIS_New_Logo.png" alt="NUIS Logo"
@@ -4148,9 +4418,10 @@
             </button>
 
             <!-- Givatayim -->
-            <div
-                class="achievement-card bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col h-full group transition-all relative cursor-pointer hover:shadow-2xl hover:border-blue-300 hover:ring-4 hover:ring-blue-50 text-left">
-                <div id="givatayim-info-trigger" class="flex-1 flex flex-col">
+            <div id="givatayim-info-trigger"
+                class="achievement-card scroll-mt-24 bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col h-full group transition-all relative cursor-pointer hover:shadow-2xl hover:border-blue-300 hover:ring-4 hover:ring-blue-50 text-left"
+                tabindex="0" role="button" aria-label="Givatayim — view activity">
+                <div class="flex-1 flex flex-col">
                     <div
                         class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-inner border border-slate-100">
                         <img src="https://www.givatayim.muni.il/content/images/logo.png" alt="Givatayim Logo"
@@ -4208,8 +4479,9 @@
 
             <!-- TAU Student Union -->
             <div id="role-tau-aguda"
-                class="achievement-card scroll-mt-24 bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col h-full group transition-all relative cursor-pointer hover:shadow-2xl hover:border-blue-300 hover:ring-4 hover:ring-blue-50 text-left">
-                <div id="tau-info-trigger" class="flex-1 flex flex-col">
+                class="achievement-card scroll-mt-24 bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col h-full group transition-all relative cursor-pointer hover:shadow-2xl hover:border-blue-300 hover:ring-4 hover:ring-blue-50 text-left"
+                tabindex="0" role="button" aria-label="TAU Student Union — view summary">
+                <div class="flex-1 flex flex-col">
                     <div
                         class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-inner border border-slate-100">
                         <img src="https://upload.wikimedia.org/wikipedia/he/thumb/2/23/%D7%A1%D7%9E%D7%9C%D7%99%D7%9C_%D7%90%D7%92%D7%95%D7%93%D7%AA_%D7%94%D7%A1%D7%98%D7%95%D7%93%D7%A0%D7%98%D7%99%D7%9D_%D7%90%D7%95%D7%A0%D7%99%D7%91%D7%A8%D7%A1%D7%99%D7%98%D7%AA_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_2009.svg/1920px-%D7%A1%D7%9E%D7%9C%D7%99%D7%9C_%D7%90%D7%92%D7%95%D7%93%D7%AA_%D7%94%D7%A1%D7%98%D7%95%D7%93%D7%A0%D7%98%D7%99%D7%9D_%D7%90%D7%95%D7%A0%D7%99%D7%91%D7%A8%D7%A1%D7%99%D7%98%D7%AA_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_2009.svg.png"
@@ -4378,13 +4650,14 @@
                 <i data-lucide="message-square-quote"
                     class="h-7 w-7 shrink-0 text-indigo-500 sm:h-8 sm:w-8 md:h-9 md:w-9" aria-hidden="true"></i>
                 <span class="text-slate-900">Professional recommendations</span>
-                <span class="font-light text-slate-400 sm:font-normal" aria-hidden="true">-</span>
-                <span class="bg-gradient-to-l from-indigo-800 to-violet-800 bg-clip-text font-bold text-transparent">From a variety of professional interfaces</span>
             </h2>
             <div class="mx-auto mt-6 h-1.5 w-32 max-w-[min(100%,18rem)] rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500 shadow-sm shadow-indigo-200/50 sm:mt-7 sm:h-2 sm:w-40"
                 aria-hidden="true"></div>
             <div class="mt-6 space-y-3 text-base leading-relaxed text-slate-600 sm:text-lg">
-                <p class="text-pretty text-lg font-medium leading-relaxed text-slate-700 sm:text-xl sm:font-semibold md:text-2xl md:leading-snug">From colleagues, clients, managers and strategic partners.</p>
+                <p class="text-pretty text-lg font-medium leading-relaxed text-slate-700 sm:text-xl sm:font-semibold md:text-2xl md:leading-snug">
+                    <span class="bg-gradient-to-l from-indigo-800 to-violet-800 bg-clip-text font-bold text-transparent">Across diverse interfaces</span>
+                    <span class="text-slate-700"> — colleagues, clients, managers and strategic partners.</span>
+                </p>
             </div>
         </div>
 
@@ -4392,15 +4665,15 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
 
             <!-- Card 1: Large - Sky Cyan | col 7 -->
-            <div
+            <div id="testimonial-primary-card"
                 class="md:col-span-7 bg-gradient-to-br from-cyan-500 to-sky-600 rounded-3xl p-7 shadow-xl flex flex-col hover:-translate-y-1 transition-all">
                 <svg class="w-12 h-12 text-white/30 mb-5" fill="currentColor" viewBox="0 0 32 32">
                     <path
                         d="M10 8C6.686 8 4 10.686 4 14v10h10V14H7c0-1.657 1.343-3 3-3V8zm18 0c-3.314 0-6 2.686-6 6v10h10V14h-7c0-1.657 1.343-3 3-3V8z" />
                 </svg>
-                <blockquote class="text-white leading-relaxed text-left flex-grow mb-6 text-xl font-medium">"I have known Ori for many years. We both started our professional careers at similar times, and we have met on multiple occasions since. He is a great leader and could be counted on to come up with a solution when we needed it most. His passion and charisma always impressed me. Ori is a great person to work with and I truly believe that the performing artists of Israel are well represented."</blockquote>
+                <blockquote class="text-white leading-relaxed text-left flex-grow mb-6 text-xl sm:text-2xl font-medium">"He is a great leader and could be counted on to come up with a solution when we needed it most. I truly believe that the performing artists of Israel are well represented."</blockquote>
                 <div class="pt-4 border-t border-white/20">
-                    <p class="text-xs font-semibold text-white/80 uppercase tracking-widest">Revenue Executive | Digital Assets Advisor</p>
+                    <p class="text-sm font-black text-white uppercase tracking-widest">Revenue Executive | Digital Assets Advisor</p>
                 </div>
             </div>
 
@@ -4411,9 +4684,9 @@
                     <path
                         d="M10 8C6.686 8 4 10.686 4 14v10h10V14H7c0-1.657 1.343-3 3-3V8zm18 0c-3.314 0-6 2.686-6 6v10h10V14h-7c0-1.657 1.343-3 3-3V8z" />
                 </svg>
-                <blockquote class="text-white/90 leading-relaxed text-left flex-grow mb-6 text-base">"I have known Ori for a long time, and I can confidently say that he is a highly talented, dedicated, and mission-oriented leader. With a 'Can-do' approach he gets things done smartly and creatively. His passion for culture and education is an inspiration for all. Ori's vision and attention to detail help him drive change successfully."</blockquote>
+                <blockquote class="text-white leading-relaxed text-left flex-grow mb-6 text-base sm:text-lg font-medium">"He is a highly talented, dedicated, and mission-oriented leader. With a 'Can-do' approach he gets things done smartly and creatively."</blockquote>
                 <div class="pt-4 border-t border-white/20">
-                    <p class="text-xs font-semibold text-white/80 uppercase tracking-widest">Product Management, Strategy, M&A, VC</p>
+                    <p class="text-sm font-black text-white uppercase tracking-widest">Product Management, Strategy, M&A, VC</p>
                 </div>
             </div>
 
@@ -4424,9 +4697,9 @@
                     <path
                         d="M10 8C6.686 8 4 10.686 4 14v10h10V14H7c0-1.657 1.343-3 3-3V8zm18 0c-3.314 0-6 2.686-6 6v10h10V14h-7c0-1.657 1.343-3 3-3V8z" />
                 </svg>
-                <blockquote class="text-white/90 leading-relaxed text-left flex-grow mb-5 text-sm">"Ori is a knowledgeable, reliable professional who I have had the pleasure of knowing for many years. He has a deep understanding of his field, and he is always willing to share his knowledge with others. He also understands that it's important to take care of his team and make them feel valued, which helps ensure they can thrive in their roles. I highly recommend Ori as a professional, partner and friend."</blockquote>
+                <blockquote class="text-white leading-relaxed text-left flex-grow mb-5 text-base sm:text-lg font-medium">"He also understands that it's important to take care of his team and make them feel valued, which helps ensure they can thrive in their roles."</blockquote>
                 <div class="pt-4 border-t border-white/20">
-                    <p class="text-[11px] font-semibold text-white/80 uppercase tracking-widest">Partner, Litigation Department at Barnea</p>
+                    <p class="text-xs font-black text-white uppercase tracking-widest">Partner, Litigation Department at Barnea</p>
                 </div>
             </div>
 
@@ -4437,9 +4710,9 @@
                     <path
                         d="M10 8C6.686 8 4 10.686 4 14v10h10V14H7c0-1.657 1.343-3 3-3V8zm18 0c-3.314 0-6 2.686-6 6v10h10V14h-7c0-1.657 1.343-3 3-3V8z" />
                 </svg>
-                <blockquote class="text-white/90 leading-relaxed text-left flex-grow mb-5 text-sm">"I was fortunate to work directly with Ori on multiple occasions. He is a one-of-a-kind leader and professional. Ori has a unique ability to set high standards for himself, his team, and his organization. I'm happy to see how far he has come since then. I highly recommend him as a professional and leader."</blockquote>
+                <blockquote class="text-white leading-relaxed text-left flex-grow mb-5 text-base sm:text-lg font-medium">"Ori has a unique ability to set high standards for himself, his team, and his organization."</blockquote>
                 <div class="pt-4 border-t border-white/20">
-                    <p class="text-[11px] font-semibold text-white/80 uppercase tracking-widest">Founder, Investor, Changemaker</p>
+                    <p class="text-xs font-black text-white uppercase tracking-widest">Founder, Investor, Changemaker</p>
                 </div>
             </div>
 
@@ -4450,9 +4723,9 @@
                     <path
                         d="M10 8C6.686 8 4 10.686 4 14v10h10V14H7c0-1.657 1.343-3 3-3V8zm18 0c-3.314 0-6 2.686-6 6v10h10V14h-7c0-1.657 1.343-3 3-3V8z" />
                 </svg>
-                <blockquote class="text-white/90 leading-relaxed text-left flex-grow mb-5 text-sm">"Ori is one of the most unique leaders I met. I started working with him a couple of years ago and I was positively impressed by his professionalism. He is smart and handles every situation very carefully and in the right manner. He is hard-working, and has a good network for various business opportunities. I highly recommend working with him to get the best out of everything."</blockquote>
+                <blockquote class="text-white leading-relaxed text-left flex-grow mb-5 text-base sm:text-lg font-medium">"He is smart and handles every situation very carefully and in the right manner."</blockquote>
                 <div class="pt-4 border-t border-white/20">
-                    <p class="text-[11px] font-semibold text-white/80 uppercase tracking-widest">Early-stage Investor | Sports Innovation</p>
+                    <p class="text-xs font-black text-white uppercase tracking-widest">Early-stage Investor | Sports Innovation</p>
                 </div>
             </div>
 
@@ -4464,13 +4737,13 @@
                         <img src="https://upload.wikimedia.org/wikipedia/he/2/2d/Lionlogo_2c-1-.jpg"
                             alt="Lions organization logo" class="h-11 w-auto object-contain max-w-[4.5rem]" loading="lazy">
                     </div>
-                    <h3 class="text-white font-bold text-sm leading-snug">Man of the Year of the Lions Club Gor Aryeh -
+                    <h3 class="text-white font-bold text-base leading-snug">Man of the Year of the Lions Club Gor Aryeh —
                         2011–2012</h3>
                 </div>
-                <p class="text-white/90 leading-relaxed text-left flex-grow mb-5 text-sm">Watch the video about Ori Reshtik's activity,
+                <p class="text-white/90 leading-relaxed text-left flex-grow mb-5 text-sm sm:text-base">Watch the video about Ori Reshtik's activity,
                     which led to his selection as Lions Club Man of the Year 2011/2012.</p>
                 <div class="mt-auto pt-4 border-t border-white/20">
-                    <a href="https://www.youtube.com/watch?v=xtX4ZwaOJfE&t=7s" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.youtube.com/watch?v=xtX4ZwaOJfE&t=7s" rel="noopener noreferrer"
                         class="inline-flex items-center gap-1.5 text-white/95 hover:text-white text-xs font-bold transition-colors">
                         <i data-lucide="monitor-play" class="w-3.5 h-3.5"></i>
                         Watch on YouTube
@@ -4526,7 +4799,7 @@
                     </svg>
                 </a>
                 <a href="https://drive.google.com/uc?export=download&id=1gAb5XWHSZ-iA1mHvCHb8Ausu7Eh3X5jD"
-                    target="_blank" rel="noopener noreferrer" type="text/vcard"
+                    target="_blank" rel="noopener noreferrer"
                     class="group relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-500 shadow-sm ring-1 ring-slate-200 transition-all hover:-translate-y-0.5 hover:text-emerald-600 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
                     title="Opening a business card" aria-label="Opening a business card">
                     <i data-lucide="contact-round" class="w-[18px] h-[18px]"></i>
@@ -4546,6 +4819,26 @@
                 </a>
             </div>
             <p class="mt-5 text-slate-400 text-xs font-normal tracking-wide">Ori Reshtik · 2026</p>
+            <p class="mx-auto mt-3 max-w-md text-[0.65rem] leading-relaxed text-slate-400/90">
+                Built by Ori using AI
+                <span class="inline-flex align-middle gap-1.5 mx-1" aria-label="Gemini, Claude, Cursor">
+                    <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer"
+                        class="opacity-60 transition hover:opacity-100" title="Gemini">
+                        <img src="https://cdn.simpleicons.org/googlegemini/94a3b8" alt="Gemini" class="h-3.5 w-3.5"
+                            width="14" height="14" loading="lazy">
+                    </a>
+                    <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer"
+                        class="opacity-60 transition hover:opacity-100" title="Claude">
+                        <img src="https://cdn.simpleicons.org/claude/94a3b8" alt="Claude" class="h-3.5 w-3.5"
+                            width="14" height="14" loading="lazy">
+                    </a>
+                    <a href="https://cursor.com/" target="_blank" rel="noopener noreferrer"
+                        class="opacity-60 transition hover:opacity-100" title="Cursor">
+                        <img src="https://cdn.simpleicons.org/cursor/94a3b8" alt="Cursor" class="h-3.5 w-3.5"
+                            width="14" height="14" loading="lazy">
+                    </a>
+                </span>
+            </p>
         </div>
     </footer>
 
@@ -4559,416 +4852,69 @@
     </a>
 
     <script>
-        // Use a generic Modal class for both modals
-        class GenericModal {
-            constructor(modalId, triggerId, closeBtnIds) {
-                this.el = document.getElementById(modalId);
-                this.trigger = document.getElementById(triggerId);
-                this.closeBtns = closeBtnIds.map(id => document.getElementById(id)).filter(b => b);
-                this.init();
-            }
+        let bodyScrollLockCount = 0;
+        const modalOverlayStack = [];
 
-            init() {
-                if (this.trigger) {
-                    this.trigger.addEventListener('click', (e) => {
-                        // Very simple logic: if you clicked the trigger or anything inside it, open it.
-                        // (Except if you clicked an internal accordion button, which we check via closest).
-                        if (!e.target.closest('button.focus\\:outline-none:not(#' + this.trigger.id + ')')) {
-                            this.open();
-                        }
-                    });
-                }
-                this.closeBtns.forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); this.close(); }));
-                if (this.el) {
-                    this.el.addEventListener('click', (e) => {
-                        if (e.target === this.el) this.close();
-                    });
-                }
+        const lockBodyScroll = () => {
+            bodyScrollLockCount += 1;
+            document.body.style.overflow = 'hidden';
+        };
 
-                // Add global ESC key listener for this modal instance
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && !this.el.classList.contains('hidden')) {
-                        this.close();
-                    }
-                });
-            }
+        const unlockBodyScroll = () => {
+            bodyScrollLockCount = Math.max(0, bodyScrollLockCount - 1);
+            if (bodyScrollLockCount === 0) document.body.style.overflow = '';
+        };
 
-            open() {
-                if (!this.el) return;
-                this.el.classList.remove('hidden');
-                this.el.classList.add('flex');
-                setTimeout(() => this.el.classList.add('modal-active'), 10);
-            }
-
-            close() {
-                if (!this.el) return;
-                this.el.classList.remove('modal-active');
-                setTimeout(() => {
-                    this.el.classList.remove('flex');
-                    this.el.classList.add('hidden');
-                }, 300);
-            }
-        }
-
-        // Standard Initialization
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Modals
-            new GenericModal('shaham-modal', 'shaham-info-trigger', ['shaham-close-x', 'shaham-close-btn']);
-            new GenericModal('eshkolot-modal', 'eshkolot-info-trigger', ['eshkolot-close-x', 'eshkolot-close-btn']);
-            new GenericModal('eshkolot-revenue-modal', 'eshkolot-revenue-trigger', ['eshkolot-revenue-close-x', 'eshkolot-revenue-close-btn']);
-            new GenericModal('eshkolot-global-modal', 'eshkolot-global-trigger', ['eshkolot-global-close-x', 'eshkolot-global-close-btn']);
-            new GenericModal('eshkolot-regulatory-modal', 'eshkolot-regulatory-trigger', ['eshkolot-regulatory-close-x', 'eshkolot-regulatory-close-btn']);
-            new GenericModal('eshkolot-ip-modal', 'eshkolot-ip-trigger', ['eshkolot-ip-close-x', 'eshkolot-ip-close-btn']);
-            new GenericModal('eshkolot-stakeholders-modal', 'eshkolot-stakeholders-trigger', ['eshkolot-stakeholders-close-x', 'eshkolot-stakeholders-close-btn']);
-            new GenericModal('shaham-growth-modal', 'shaham-growth-trigger', ['shaham-growth-close-x', 'shaham-growth-close-btn']);
-            new GenericModal('shaham-agreements-modal', 'shaham-agreements-trigger', ['shaham-agreements-close-x', 'shaham-agreements-close-btn']);
-            new GenericModal('shaham-placement-modal', 'shaham-placement-trigger', ['shaham-placement-close-x', 'shaham-placement-close-btn']);
-            new GenericModal('shaham-international-modal', 'shaham-international-trigger', ['shaham-international-close-x', 'shaham-international-close-btn']);
-            new GenericModal('nuis-modal', 'nuis-info-trigger', ['nuis-close-x', 'nuis-close-btn']);
-            new GenericModal('tau-modal', 'tau-info-trigger', ['tau-close-x', 'tau-close-btn']);
-            new GenericModal('che-modal', 'che-info-trigger', ['che-close-x', 'che-close-btn']);
-            new GenericModal('givatayim-modal', 'givatayim-info-trigger', ['givatayim-close-x', 'givatayim-close-btn']);
-            new GenericModal('keren-eshkolot-modal', 'keren-modal-trigger', ['keren-eshkolot-close-x', 'keren-eshkolot-close-btn']);
-            new GenericModal('lahav-modal', 'lahav-trigger', ['lahav-close-x', 'lahav-close-btn']);
-            new GenericModal('shaham-neshama-modal', 'shaham-neshama-trigger', ['shaham-neshama-close-x', 'shaham-neshama-close-btn']);
-            new GenericModal('skills-matrix-modal-bd', 'skills-matrix-trigger-bd', ['skills-matrix-bd-close-x', 'skills-matrix-bd-close-btn']);
-            new GenericModal('skills-matrix-modal-strategy', 'skills-matrix-trigger-strategy', ['skills-matrix-strategy-close-x', 'skills-matrix-strategy-close-btn']);
-            new GenericModal('skills-matrix-modal-leadership', 'skills-matrix-trigger-leadership', ['skills-matrix-leadership-close-x', 'skills-matrix-leadership-close-btn']);
-            new GenericModal('skills-matrix-modal-subsidiaries', 'skills-matrix-trigger-subsidiaries', ['skills-matrix-subsidiaries-close-x', 'skills-matrix-subsidiaries-close-btn']);
-            new GenericModal('skills-matrix-modal-business', 'skills-matrix-trigger-business', ['skills-matrix-business-close-x', 'skills-matrix-business-close-btn']);
-            new GenericModal('skills-matrix-modal-fintech', 'skills-matrix-trigger-fintech', ['skills-matrix-fintech-close-x', 'skills-matrix-fintech-close-btn']);
-            new GenericModal('skills-matrix-modal-regulatory', 'skills-matrix-trigger-regulatory', ['skills-matrix-regulatory-close-x', 'skills-matrix-regulatory-close-btn']);
-            new GenericModal('skills-matrix-modal-systems', 'skills-matrix-trigger-systems', ['skills-matrix-systems-close-x', 'skills-matrix-systems-close-btn']);
-            new GenericModal('skills-matrix-modal-ops', 'skills-matrix-trigger-ops', ['skills-matrix-ops-close-x', 'skills-matrix-ops-close-btn']);
-            new GenericModal('skills-matrix-modal-branding', 'skills-matrix-trigger-branding', ['skills-matrix-branding-close-x', 'skills-matrix-branding-close-btn']);
-            new GenericModal('skills-matrix-modal-turnaround', 'skills-matrix-trigger-turnaround', ['skills-matrix-turnaround-close-x', 'skills-matrix-turnaround-close-btn']);
-            new GenericModal('skills-matrix-modal-negotiation', 'skills-matrix-trigger-negotiation', ['skills-matrix-negotiation-close-x', 'skills-matrix-negotiation-close-btn']);
-
-            const firstVisitModal = document.getElementById('first-visit-modal');
-            const firstVisitCloseX = document.getElementById('first-visit-close-button');
-            const firstVisitFullBtn = document.getElementById('first-visit-full-btn');
-            const firstVisitSkillsBtn = document.getElementById('first-visit-skills-btn');
-            const firstVisitContactBtn = document.getElementById('first-visit-contact-btn');
-            const closeFirstVisitModal = () => {
-                if (!firstVisitModal) return;
-                firstVisitModal.classList.remove('modal-active');
-                setTimeout(() => {
-                    firstVisitModal.classList.remove('flex');
-                    firstVisitModal.classList.add('hidden');
-                }, 300);
-            };
-
-            const openFirstVisitModal = () => {
-                if (!firstVisitModal) return;
-                firstVisitModal.classList.remove('hidden');
-                firstVisitModal.classList.add('flex');
-                setTimeout(() => firstVisitModal.classList.add('modal-active'), 10);
-            };
-
-            const closeAndScrollFromFirstVisit = (targetId) => {
-                closeFirstVisitModal();
-                const target = document.getElementById(targetId);
-                if (target) {
-                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 160);
-                }
-            };
-
-            if (firstVisitModal) setTimeout(openFirstVisitModal, 450);
-
-            firstVisitCloseX?.addEventListener('click', () => {
-                closeFirstVisitModal();
-            });
-            firstVisitFullBtn?.addEventListener('click', () => {
-                closeFirstVisitModal();
-            });
-            firstVisitSkillsBtn?.addEventListener('click', (e) => {
-                e.preventDefault();
-                closeAndScrollFromFirstVisit('skills-map');
-            });
-            firstVisitContactBtn?.addEventListener('click', (e) => {
-                e.preventDefault();
-                closeAndScrollFromFirstVisit('contact');
-            });
-            firstVisitModal?.addEventListener('click', (e) => {
-                if (e.target === firstVisitModal) {
-                    closeFirstVisitModal();
-                }
-            });
+        const bindGlobalEscapeListener = () => {
+            if (bindGlobalEscapeListener.bound) return;
+            bindGlobalEscapeListener.bound = true;
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && firstVisitModal && !firstVisitModal.classList.contains('hidden')) {
-                    closeFirstVisitModal();
-                }
+                if (e.key !== 'Escape') return;
+                const top = modalOverlayStack[modalOverlayStack.length - 1];
+                if (top && typeof top.close === 'function') top.close();
             });
+        };
 
-            const tocNav = document.getElementById('portfolio-toc');
-            if (tocNav) {
-                tocNav.addEventListener('click', (e) => {
-                    const a = e.target.closest('a[href^="#"]');
-                    if (!a || !tocNav.contains(a)) return;
-                    const modalTriggerId = a.getAttribute('data-modal-trigger');
-                    const tocAction = a.getAttribute('data-toc-action');
-                    if (!modalTriggerId && !tocAction) return;
-                    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+        const pushModalOverlay = (controller) => {
+            const idx = modalOverlayStack.indexOf(controller);
+            if (idx >= 0) modalOverlayStack.splice(idx, 1);
+            modalOverlayStack.push(controller);
+            lockBodyScroll();
+        };
 
-                    e.preventDefault();
-                    const href = a.getAttribute('href') || '';
-                    const hashId = href.startsWith('#') ? href.slice(1) : '';
-                    const scrollTarget = hashId ? document.getElementById(hashId) : null;
-                    if (href.startsWith('#')) {
-                        try {
-                            history.replaceState(null, '', href);
-                        } catch (err) { /* ignore */ }
-                    }
-                    if (scrollTarget) {
-                        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
+        const popModalOverlay = (controller) => {
+            const idx = modalOverlayStack.indexOf(controller);
+            if (idx >= 0) modalOverlayStack.splice(idx, 1);
+            unlockBodyScroll();
+        };
 
-                    let delayMs = 380;
-                    if (tocAction === 'eshkolot-keren' || tocAction === 'shaham-neshama') delayMs = 520;
-                    else if (tocAction === 'eshkolot-core-expand') delayMs = 480;
-                    else if (tocAction === 'external-card' || tocAction === 'cv-dropdown-open') delayMs = 400;
-                    else if (tocAction === 'education-open' || tocAction === 'testimonials-highlight') delayMs = 420;
-                    else if (tocAction === 'skills-map-expand') delayMs = 360;
-                    else if (tocAction === 'contact-focus') delayMs = 360;
-                    else if (tocAction) delayMs = 420;
-
-                    window.setTimeout(() => {
-                        if (modalTriggerId) {
-                            const t = document.getElementById(modalTriggerId);
-                            if (t) t.click();
-                        }
-                        if (tocAction === 'eshkolot-keren') {
-                            const subsDd = document.getElementById('subsidiaries-dropdown');
-                            const subsBtn = document.getElementById('subsidiaries-trigger');
-                            if (subsDd && subsDd.classList.contains('hidden') && subsBtn) subsBtn.click();
-                            window.setTimeout(() => {
-                                const keren = document.getElementById('keren-modal-trigger');
-                                if (keren) keren.click();
-                            }, 280);
-                        }
-                        if (tocAction === 'cv-dropdown-open') {
-                            const dd = document.getElementById('cv-dropdown');
-                            const cvBtn = document.getElementById('cv-download-btn');
-                            if (dd && cvBtn && dd.classList.contains('hidden')) cvBtn.click();
-                        }
-                        if (tocAction === 'external-card' && scrollTarget) {
-                            const extUrl = scrollTarget.getAttribute('href');
-                            if (extUrl && /^https?:\/\//i.test(extUrl)) {
-                                window.open(extUrl, '_blank', 'noopener,noreferrer');
-                            }
-                        }
-                        if (tocAction === 'eshkolot-core-expand') {
-                            ['project-eshkolot-digital', 'project-eshkolot-financial', 'eshlam-project'].forEach((pid) => {
-                                const root = document.getElementById(pid);
-                                root?.querySelectorAll('details').forEach((det) => {
-                                    det.open = true;
-                                });
-                            });
-                        }
-                        if (tocAction === 'education-open') {
-                            const edu = document.getElementById('education-accordion');
-                            if (edu) edu.open = true;
-                        }
-                        if (tocAction === 'testimonials-highlight') {
-                            const first = document.querySelector('#testimonials .grid > div:first-child');
-                            if (first) {
-                                first.classList.add('ring-4', 'ring-indigo-400', 'ring-offset-2');
-                                window.setTimeout(() => {
-                                    first.classList.remove('ring-4', 'ring-indigo-400', 'ring-offset-2');
-                                }, 1600);
-                            }
-                        }
-                        if (tocAction === 'contact-focus') {
-                            const link = document.querySelector('#contact a[href^="mailto:"]');
-                            if (link && typeof link.focus === 'function') link.focus({ preventScroll: true });
-                        }
-                    }, delayMs);
-                });
+        const closeModalElement = (el) => {
+            const controller = modalOverlayStack.find((item) => item.el === el);
+            if (controller) {
+                controller.close();
+                return true;
             }
+            return false;
+        };
 
-            document.addEventListener('click', (e) => {
-                const body = e.target.closest('.skills-matrix-modal-body');
-                if (!body) return;
-                const projectDetailIds = new Set(['project-eshkolot-digital', 'project-eshkolot-financial', 'eshlam-project', 'shaham-pnl-training', 'shaham-safety-net']);
-                const link = e.target.closest('a[href^="#"], a[data-modal-trigger]');
-                if (!link ||!body.contains(link)) return;
-                if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+        let revenueModalCharts = [];
+        let revenueModalChartsReady = false;
 
-                const closeCurrentSkillsModal = (afterClose) => {
-                    const shell = body.closest('.skills-matrix-modal-shell');
-                    if (!shell) {
-                        afterClose();
-                        return;
-                    }
-                    shell.classList.remove('modal-active');
-                    window.setTimeout(() => {
-                        shell.classList.remove('flex');
-                        shell.classList.add('hidden');
-                        afterClose();
-                    }, 300);
-                };
-
-                const openProjectDetails = (target) => {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    const det = target.querySelector('details') ||
-                        (target.id === 'shaham-safety-net'? target.nextElementSibling?.querySelector('details'): null);
-                    if (det) det.open = true;
-                };
-
-                const modalTriggerId = link.getAttribute('data-modal-trigger');
-                const href = link.getAttribute('href') || '';
-                const hashId = href.startsWith('#')? href.slice(1): '';
-                const hashTarget = hashId? document.getElementById(hashId): null;
-
-                if (modalTriggerId) {
-                    e.preventDefault();
-                    closeCurrentSkillsModal(() => {
-                        if (hashTarget) hashTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        window.setTimeout(() => {
-                            const trigger = document.getElementById(modalTriggerId);
-                            if (trigger) trigger.click();
-                        }, hashTarget? 180: 0);
-                    });
-                    return;
-                }
-
-                if (!hashTarget) return;
-                e.preventDefault();
-                closeCurrentSkillsModal(() => {
-                    if (projectDetailIds.has(hashId)) {
-                        openProjectDetails(hashTarget);
-                        return;
-                    }
-                    hashTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function initRevenueModalCharts() {
+            if (revenueModalChartsReady) {
+                revenueModalCharts.forEach((chart) => {
+                    try { chart.resize(); } catch (_) { /* ignore */ }
                 });
-            });
-
-            // Dropdown Logic for Subsidiaries (Eshkolot)
-            const subsTrigger = document.getElementById('subsidiaries-trigger');
-            const subsDropdown = document.getElementById('subsidiaries-dropdown');
-            const subsIcon = document.getElementById('subsidiaries-icon');
-            if (subsTrigger && subsDropdown && subsIcon) {
-                subsTrigger.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    subsDropdown.classList.toggle('hidden');
-                    subsIcon.classList.toggle('rotate-180');
-                });
-
-                // Close dropdown when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (!subsTrigger.contains(e.target) &&!subsDropdown.contains(e.target)) {
-                        subsDropdown.classList.add('hidden');
-                        subsIcon.classList.remove('rotate-180');
-                    }
-                });
+                return;
             }
-
-            // Accordion Logic for NUIS Board Roles
-            const nuisBoardTrigger = document.getElementById('nuis-board-trigger');
-            const nuisBoardContent = document.getElementById('nuis-board-content');
-            const nuisBoardIcon = document.getElementById('nuis-board-icon');
-            if (nuisBoardTrigger && nuisBoardContent && nuisBoardIcon) {
-                nuisBoardTrigger.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    nuisBoardContent.classList.toggle('hidden');
-                    nuisBoardIcon.classList.toggle('rotate-180');
-                });
-            }
-
-            // Accordion Logic for TAU Board Roles
-            const tauBoardTrigger = document.getElementById('tau-board-trigger');
-            const tauBoardContent = document.getElementById('tau-board-content');
-            const tauBoardIcon = document.getElementById('tau-board-icon');
-            if (tauBoardTrigger && tauBoardContent && tauBoardIcon) {
-                tauBoardTrigger.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    tauBoardContent.classList.toggle('hidden');
-                    tauBoardIcon.classList.toggle('rotate-180');
-                });
-            }
-
-            // Accordion Logic for Givatayim Board Roles
-            const givatayimBoardTrigger = document.getElementById('givatayim-board-trigger');
-            const givatayimBoardContent = document.getElementById('givatayim-board-content');
-            const givatayimBoardIcon = document.getElementById('givatayim-board-icon');
-            if (givatayimBoardTrigger && givatayimBoardContent && givatayimBoardIcon) {
-                givatayimBoardTrigger.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    givatayimBoardContent.classList.toggle('hidden');
-                    givatayimBoardIcon.classList.toggle('rotate-180');
-                });
-            }
-
-            // Charts Setup
-            const sharedOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    title: { display: true, font: { family: 'Assistant', size: 16, weight: 'bold' } }
-                },
-                scales: {
-                    x: { grid: { display: false } },
-                    y: { grid: { color: 'rgba(226, 232, 240, 0.5)' } }
-                }
-            };
-
-            const safeInitChart = (id, config) => {
-                const el = document.getElementById(id);
-                if (el) return new Chart(el.getContext('2d'), config);
-            };
-
-            // Eshkolot Charts
-            safeInitChart('eshkolotRevenueChart', {
-                type: 'line',
-                data: {
-                    labels: ['2020', '2021', '2022', '2023', '2024', '2025 (forecast)'],
-                    datasets: [{ data: [31.6, 36.4, 35.3, 37.2, 40.1, 45], borderColor: '#0284c7', borderWidth: 4, tension: 0.4 }]
-                },
-                options: {...sharedOptions, plugins: {...sharedOptions.plugins, title: {...sharedOptions.plugins.title, text: 'Revenue growth (in millions of ILS)' } } }
-            });
-
-            safeInitChart('eshkolotNetProfitChart', {
-                type: 'line',
-                data: {
-                    labels: ['2020', '2021', '2022', '2023', '2024', '2025 (forecast)'],
-                    datasets: [{ data: [23.1, 25.5, 25.6, 26.3, 30.1, 33], borderColor: '#10b981', borderWidth: 4, tension: 0.4 }]
-                },
-                options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { ...sharedOptions.plugins.title, text: 'Net profit trend (in millions of ILS)' } } }
-            });
-
-            // SHAHAM Charts
-            safeInitChart('shahamRevenueChart', {
-                type: 'line',
-                data: {
-                    labels: ['2014', '2016', '2018', '2020'],
-                    datasets: [{ data: [2.16, 2.70, 3.87, 5.6], borderColor: '#8b5cf6', borderWidth: 4, tension: 0.4 }]
-                },
-                options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { ...sharedOptions.plugins.title, text: 'SHAHAM revenue (in millions of ILS)' } } }
-            });
-
-            safeInitChart('shahamSurplusChart', {
-                type: 'line',
-                data: {
-                    labels: ['2015', '2017', '2019', '2020'],
-                    datasets: [{ data: [3.6, 200.4, 784.4, 750.7], borderColor: '#3b82f6', borderWidth: 4, tension: 0.4 }]
-                },
-                options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { ...sharedOptions.plugins.title, text: 'Surplus trend (in thousands of ILS)' } } }
-            });
-
-            // Donut Charts for Eshlam
-            const donutOptions = { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: false }, tooltip: { enabled: false } } };
-            safeInitChart('eshlamSplitBefore', { type: 'doughnut', data: { datasets: [{ data: [50, 50], backgroundColor: ['#94a3b8', '#f1f5f9'], borderWidth: 0 }] }, options: donutOptions });
-            safeInitChart('eshlamSplitAfter', { type: 'doughnut', data: { datasets: [{ data: [64, 36], backgroundColor: ['#7c3aed', '#f1f5f9'], borderWidth: 0 }] }, options: donutOptions });
-
-            // New Eshkolot Revenue Strategy Charts
             const agreeEl = document.getElementById('agreementsGrowthChart');
             if (agreeEl) {
-                new Chart(agreeEl.getContext('2d'), {
+                revenueModalCharts.push(new Chart(agreeEl.getContext('2d'), {
                     type: 'bar',
                     data: {
                         labels: ['2021', '2025'],
                         datasets: [{
+                            label: 'Agreements',
                             data: [4, 60],
                             backgroundColor: ['#cbd5e1', '#0ea5e9'],
                             borderRadius: 6,
@@ -4980,20 +4926,20 @@
                         plugins: { legend: { display: false } },
                         scales: { x: { grid: { display: false }, border: { display: false } }, y: { display: false, grid: { display: false } } }
                     }
-                });
+                }));
             }
-
             const baseEl = document.getElementById('budgetBaseChart');
             if (baseEl) {
                 const ctx = baseEl.getContext('2d');
                 const grad = ctx.createLinearGradient(0, 0, 0, 150);
                 grad.addColorStop(0, 'rgba(16, 185, 129, 0.4)');
                 grad.addColorStop(1, 'rgba(16, 185, 129, 0)');
-                new Chart(ctx, {
+                revenueModalCharts.push(new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels: ['2021', '2022', '2023', '2024', '2025'],
                         datasets: [{
+                            label: 'Budget base',
                             data: [10, 16, 22, 28, 34],
                             fill: true,
                             backgroundColor: grad,
@@ -5011,68 +4957,61 @@
                         plugins: { legend: { display: false } },
                         scales: { x: { grid: { display: false }, border: { display: false }, ticks: { color: '#94a3b8' } }, y: { display: false, min: 0, grid: { display: false } } }
                     }
-                });
+                }));
+            }
+            revenueModalChartsReady = true;
+        }
+
+        class GenericModal {
+            constructor(modalId, triggerId, closeBtnIds) {
+                this.el = document.getElementById(modalId);
+                this.trigger = document.getElementById(triggerId);
+                this.closeBtns = closeBtnIds.map(id => document.getElementById(id)).filter(b => b);
+                this.modalId = modalId;
+                this.isOpen = false;
+                this.init();
+                bindGlobalEscapeListener();
             }
 
-            lucide.createIcons();
-        });
-    </script>
-
-    <!-- Global Video Modal -->
-    <div id="global-video-modal"
-        class="fixed inset-0 z-[3000] hidden items-center justify-center p-4 sm:p-6 bg-slate-900/90 backdrop-blur-sm transition-opacity duration-300">
-        <div
-            class="relative w-full max-w-5xl aspect-video bg-black rounded-2xl shadow-2xl overflow-hidden border border-slate-700 mx-auto mt-10">
-            <button id="global-video-close"
-                class="absolute -top-12 end-0 sm:top-4 sm:end-4 text-white hover:text-red-400 transition-colors p-2 z-[3010] cursor-pointer pointer-events-auto">
-                <i data-lucide="x" class="w-7 h-7 pointer-events-none"></i>
-            </button>
-            <iframe id="global-video-iframe" class="w-full h-full" src="" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const videoModal = document.getElementById('global-video-modal');
-            const videoIframe = document.getElementById('global-video-iframe');
-            const videoCloseBtn = document.getElementById('global-video-close');
-
-            document.querySelectorAll('a[href*="youtube.com/watch"], a[href*="youtu.be/"]').forEach(a => {
-                a.addEventListener('click', e => {
-                    e.preventDefault();
-                    let videoId = '';
-                    if (a.href.includes('youtube.com/watch')) {
-                        videoId = new URL(a.href).searchParams.get('v');
-                    } else if (a.href.includes('youtu.be/')) {
-                        videoId = a.href.split('youtu.be/')[1].split('?')[0];
-                    }
-                    if (videoId) {
-                        videoIframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-                        videoModal.classList.remove('hidden');
-                        videoModal.classList.add('flex');
-                        document.body.style.overflow = 'hidden';
-                        if (typeof lucide !== 'undefined') {
-                            lucide.createIcons();
+            init() {
+                if (this.trigger) {
+                    this.trigger.addEventListener('click', (e) => {
+                        if (!e.target.closest('button.focus\\:outline-none:not(#' + this.trigger.id + ')')) {
+                            this.open();
                         }
-                    }
-                });
-            });
+                    });
+                    this.trigger.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            this.open();
+                        }
+                    });
+                }
+                this.closeBtns.forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); this.close(); }));
+                if (this.el) {
+                    this.el.addEventListener('click', (e) => {
+                        if (e.target === this.el) this.close();
+                    });
+                }
+            }
 
-            const closeVideo = () => {
-                videoModal.classList.add('hidden');
-                videoModal.classList.remove('flex');
-                videoIframe.src = '';
-                document.body.style.overflow = '';
-            };
+            open() {
+                if (!this.el || this.isOpen) return;
+                this.isOpen = true;
+                pushModalOverlay(this);
+                this.el.classList.remove('hidden');
+                this.el.classList.add('flex');
+                setTimeout(() => this.el.classList.add('modal-active'), 10);
+                if (this.modalId === 'eshkolot-revenue-modal') {
+                    setTimeout(() => initRevenueModalCharts(), 80);
+                }
+            }
 
-            if (videoCloseBtn) videoCloseBtn.addEventListener('click', closeVideo);
-            if (videoModal) videoModal.addEventListener('click', e => {
-                if (e.target === videoModal) closeVideo();
-            });
-        });
-    </script>
-</body>
-
-</html>
+            close() {
+                if (!this.el || !this.isOpen) return;
+                this.isOpen = false;
+                popModalOverlay(this);
+                this.el.classList.remove('modal-active');
+                setTimeout(() => {
+                    this.el.classList.remove('flex');
+                    this.el.classList.add('h
