@@ -5014,4 +5014,468 @@
                 this.el.classList.remove('modal-active');
                 setTimeout(() => {
                     this.el.classList.remove('flex');
-                    this.el.classList.add('h
+                    this.el.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function setupModalAccessibility() {
+            document.querySelectorAll('.custom-modal, #global-video-modal, #first-visit-modal').forEach((modal) => {
+                modal.setAttribute('role', 'dialog');
+                modal.setAttribute('aria-modal', 'true');
+            });
+            document.querySelectorAll('button:not([type])').forEach((btn) => {
+                btn.type = 'button';
+            });
+            document.querySelectorAll('button[id$="-close-x"], button[id$="-close-btn"], #global-video-close').forEach((btn) => {
+                if (!btn.getAttribute('aria-label')) btn.setAttribute('aria-label', 'Close dialog');
+            });
+        }
+
+        // Standard Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            setupModalAccessibility();
+            // Initialize Modals
+            new GenericModal('shaham-modal', 'shaham-info-trigger', ['shaham-close-x', 'shaham-close-btn']);
+            new GenericModal('eshkolot-modal', 'eshkolot-info-trigger', ['eshkolot-close-x', 'eshkolot-close-btn']);
+            new GenericModal('eshkolot-revenue-modal', 'eshkolot-revenue-trigger', ['eshkolot-revenue-close-x', 'eshkolot-revenue-close-btn']);
+            new GenericModal('eshkolot-global-modal', 'eshkolot-global-trigger', ['eshkolot-global-close-x', 'eshkolot-global-close-btn']);
+            new GenericModal('eshkolot-regulatory-modal', 'eshkolot-regulatory-trigger', ['eshkolot-regulatory-close-x', 'eshkolot-regulatory-close-btn']);
+            new GenericModal('eshkolot-ip-modal', 'eshkolot-ip-trigger', ['eshkolot-ip-close-x', 'eshkolot-ip-close-btn']);
+            new GenericModal('eshkolot-stakeholders-modal', 'eshkolot-stakeholders-trigger', ['eshkolot-stakeholders-close-x', 'eshkolot-stakeholders-close-btn']);
+            new GenericModal('shaham-growth-modal', 'shaham-growth-trigger', ['shaham-growth-close-x', 'shaham-growth-close-btn']);
+            new GenericModal('shaham-agreements-modal', 'shaham-agreements-trigger', ['shaham-agreements-close-x', 'shaham-agreements-close-btn']);
+            new GenericModal('shaham-placement-modal', 'shaham-placement-trigger', ['shaham-placement-close-x', 'shaham-placement-close-btn']);
+            new GenericModal('shaham-international-modal', 'shaham-international-trigger', ['shaham-international-close-x', 'shaham-international-close-btn']);
+            new GenericModal('nuis-modal', 'role-nuis', ['nuis-close-x', 'nuis-close-btn']);
+            new GenericModal('tau-modal', 'role-tau-aguda', ['tau-close-x', 'tau-close-btn']);
+            new GenericModal('che-modal', 'che-info-trigger', ['che-close-x', 'che-close-btn']);
+            new GenericModal('givatayim-modal', 'givatayim-info-trigger', ['givatayim-close-x', 'givatayim-close-btn']);
+            new GenericModal('keren-eshkolot-modal', 'keren-modal-trigger', ['keren-eshkolot-close-x', 'keren-eshkolot-close-btn']);
+            new GenericModal('lahav-modal', 'lahav-trigger', ['lahav-close-x', 'lahav-close-btn']);
+            new GenericModal('shaham-neshama-modal', 'shaham-neshama-trigger', ['shaham-neshama-close-x', 'shaham-neshama-close-btn']);
+            new GenericModal('skills-matrix-modal-bd', 'skills-matrix-trigger-bd', ['skills-matrix-bd-close-x', 'skills-matrix-bd-close-btn']);
+            new GenericModal('skills-matrix-modal-strategy', 'skills-matrix-trigger-strategy', ['skills-matrix-strategy-close-x', 'skills-matrix-strategy-close-btn']);
+            new GenericModal('skills-matrix-modal-leadership', 'skills-matrix-trigger-leadership', ['skills-matrix-leadership-close-x', 'skills-matrix-leadership-close-btn']);
+            new GenericModal('skills-matrix-modal-subsidiaries', 'skills-matrix-trigger-subsidiaries', ['skills-matrix-subsidiaries-close-x', 'skills-matrix-subsidiaries-close-btn']);
+            new GenericModal('skills-matrix-modal-business', 'skills-matrix-trigger-business', ['skills-matrix-business-close-x', 'skills-matrix-business-close-btn']);
+            new GenericModal('skills-matrix-modal-fintech', 'skills-matrix-trigger-fintech', ['skills-matrix-fintech-close-x', 'skills-matrix-fintech-close-btn']);
+            new GenericModal('skills-matrix-modal-regulatory', 'skills-matrix-trigger-regulatory', ['skills-matrix-regulatory-close-x', 'skills-matrix-regulatory-close-btn']);
+            new GenericModal('skills-matrix-modal-systems', 'skills-matrix-trigger-systems', ['skills-matrix-systems-close-x', 'skills-matrix-systems-close-btn']);
+            new GenericModal('skills-matrix-modal-ops', 'skills-matrix-trigger-ops', ['skills-matrix-ops-close-x', 'skills-matrix-ops-close-btn']);
+            new GenericModal('skills-matrix-modal-branding', 'skills-matrix-trigger-branding', ['skills-matrix-branding-close-x', 'skills-matrix-branding-close-btn']);
+            new GenericModal('skills-matrix-modal-turnaround', 'skills-matrix-trigger-turnaround', ['skills-matrix-turnaround-close-x', 'skills-matrix-turnaround-close-btn']);
+            new GenericModal('skills-matrix-modal-negotiation', 'skills-matrix-trigger-negotiation', ['skills-matrix-negotiation-close-x', 'skills-matrix-negotiation-close-btn']);
+            const mediaAppearancesModal = new GenericModal('media-appearances-modal', 'media-appearances-trigger', ['media-appearances-close-x', 'media-appearances-close-btn']);
+
+            const firstVisitModal = document.getElementById('first-visit-modal');
+            const firstVisitCloseX = document.getElementById('first-visit-close-button');
+            const firstVisitFullBtn = document.getElementById('first-visit-full-btn');
+            const firstVisitSkillsBtn = document.getElementById('first-visit-skills-btn');
+            const firstVisitContactBtn = document.getElementById('first-visit-contact-btn');
+
+            const snapshotModal = {
+                close() {
+                    if (!firstVisitModal) return;
+                    popModalOverlay(this);
+                    firstVisitModal.classList.remove('modal-active');
+                    setTimeout(() => {
+                        firstVisitModal.classList.remove('flex');
+                        firstVisitModal.classList.add('hidden');
+                        document.body.classList.remove('overflow-y-hidden');
+                    }, 300);
+                }
+            };
+
+            const closeFirstVisitModal = () => snapshotModal.close();
+
+            const closeAndScrollFromFirstVisit = (targetId) => {
+                closeFirstVisitModal();
+                const target = document.getElementById(targetId);
+                if (target) {
+                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 160);
+                }
+            };
+
+            if (firstVisitModal) {
+                pushModalOverlay(snapshotModal);
+            }
+
+            firstVisitCloseX?.addEventListener('click', () => {
+                closeFirstVisitModal();
+            });
+            firstVisitFullBtn?.addEventListener('click', () => {
+                closeFirstVisitModal();
+            });
+            firstVisitSkillsBtn?.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeAndScrollFromFirstVisit('skills-map');
+            });
+            firstVisitContactBtn?.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeAndScrollFromFirstVisit('contact');
+            });
+            const mediaAppearancesOpen = mediaAppearancesModal.open.bind(mediaAppearancesModal);
+            mediaAppearancesModal.open = function () {
+                mediaAppearancesOpen();
+                setTimeout(() => {
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }, 30);
+            };
+            document.getElementById('media-appearances-trigger-hero')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                mediaAppearancesModal.open();
+            });
+            firstVisitModal?.addEventListener('click', (e) => {
+                if (e.target === firstVisitModal) {
+                    closeFirstVisitModal();
+                }
+            });
+
+            const tocNav = document.getElementById('portfolio-toc');
+            if (tocNav) {
+                tocNav.addEventListener('click', (e) => {
+                    const a = e.target.closest('a[href^="#"]');
+                    if (!a || !tocNav.contains(a)) return;
+                    const modalTriggerId = a.getAttribute('data-modal-trigger');
+                    const tocAction = a.getAttribute('data-toc-action');
+                    if (!modalTriggerId && !tocAction) return;
+                    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+
+                    e.preventDefault();
+                    const href = a.getAttribute('href') || '';
+                    const hashId = href.startsWith('#') ? href.slice(1) : '';
+                    const scrollTarget = hashId ? document.getElementById(hashId) : null;
+                    if (href.startsWith('#')) {
+                        try {
+                            history.replaceState(null, '', href);
+                        } catch (err) { /* ignore */ }
+                    }
+                    if (scrollTarget) {
+                        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+
+                    let delayMs = 380;
+                    if (tocAction === 'eshkolot-keren' || tocAction === 'shaham-neshama') delayMs = 520;
+                    else if (tocAction === 'eshkolot-core-expand') delayMs = 480;
+                    else if (tocAction === 'external-card' || tocAction === 'cv-dropdown-open') delayMs = 400;
+                    else if (tocAction === 'education-open' || tocAction === 'testimonials-highlight') delayMs = 420;
+                    else if (tocAction === 'skills-map-expand') delayMs = 360;
+                    else if (tocAction === 'contact-focus') delayMs = 360;
+                    else if (tocAction) delayMs = 420;
+
+                    window.setTimeout(() => {
+                        if (modalTriggerId) {
+                            const t = document.getElementById(modalTriggerId);
+                            if (t) t.click();
+                        }
+                        if (tocAction === 'eshkolot-keren') {
+                            const subsDd = document.getElementById('subsidiaries-dropdown');
+                            const subsBtn = document.getElementById('subsidiaries-trigger');
+                            if (subsDd && subsDd.classList.contains('hidden') && subsBtn) subsBtn.click();
+                            window.setTimeout(() => {
+                                const keren = document.getElementById('keren-modal-trigger');
+                                if (keren) keren.click();
+                            }, 280);
+                        }
+                        if (tocAction === 'cv-dropdown-open') {
+                            const dd = document.getElementById('cv-dropdown');
+                            const cvBtn = document.getElementById('cv-download-btn');
+                            if (dd && cvBtn && dd.classList.contains('hidden')) cvBtn.click();
+                        }
+                        if (tocAction === 'external-card' && scrollTarget) {
+                            const extUrl = scrollTarget.getAttribute('href');
+                            if (extUrl && /^https?:\/\//i.test(extUrl)) {
+                                window.open(extUrl, '_blank', 'noopener,noreferrer');
+                            }
+                        }
+                        if (tocAction === 'eshkolot-core-expand') {
+                            ['project-eshkolot-digital', 'project-eshkolot-financial', 'eshlam-project'].forEach((pid) => {
+                                const root = document.getElementById(pid);
+                                root?.querySelectorAll('details').forEach((det) => {
+                                    det.open = true;
+                                });
+                            });
+                        }
+                        if (tocAction === 'education-open') {
+                            const edu = document.getElementById('education-accordion');
+                            if (edu) edu.open = true;
+                        }
+                        if (tocAction === 'testimonials-highlight') {
+                            const first = document.getElementById('testimonial-primary-card');
+                            if (first) {
+                                first.classList.add('ring-4', 'ring-indigo-400', 'ring-offset-2');
+                                window.setTimeout(() => {
+                                    first.classList.remove('ring-4', 'ring-indigo-400', 'ring-offset-2');
+                                }, 1600);
+                            }
+                        }
+                        if (tocAction === 'skills-map-expand') {
+                            const bento = document.getElementById('skills-matrix-bento');
+                            if (bento) {
+                                bento.classList.add('ring-4', 'ring-indigo-400', 'ring-offset-2', 'rounded-3xl');
+                                window.setTimeout(() => {
+                                    bento.classList.remove('ring-4', 'ring-indigo-400', 'ring-offset-2', 'rounded-3xl');
+                                }, 1800);
+                            }
+                        }
+                        if (tocAction === 'contact-focus') {
+                            const link = document.querySelector('#contact a[href^="mailto:"]');
+                            if (link && typeof link.focus === 'function') link.focus({ preventScroll: true });
+                        }
+                    }, delayMs);
+                });
+            }
+
+            document.addEventListener('click', (e) => {
+                const body = e.target.closest('.skills-matrix-modal-body');
+                if (!body) return;
+                const projectDetailIds = new Set(['project-eshkolot-digital', 'project-eshkolot-financial', 'eshlam-project', 'shaham-pnl-training', 'shaham-safety-net']);
+                const link = e.target.closest('a[href^="#"], a[data-modal-trigger]');
+                if (!link ||!body.contains(link)) return;
+                if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+
+                const closeCurrentSkillsModal = (afterClose) => {
+                    const shell = body.closest('.skills-matrix-modal-shell');
+                    if (!shell) {
+                        afterClose();
+                        return;
+                    }
+                    if (closeModalElement(shell)) {
+                        window.setTimeout(afterClose, 320);
+                        return;
+                    }
+                    shell.classList.remove('modal-active');
+                    window.setTimeout(() => {
+                        shell.classList.remove('flex');
+                        shell.classList.add('hidden');
+                        afterClose();
+                    }, 300);
+                };
+
+                const openProjectDetails = (target) => {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const det = target.querySelector('details') ||
+                        (target.id === 'shaham-safety-net'? target.nextElementSibling?.querySelector('details'): null);
+                    if (det) det.open = true;
+                };
+
+                const modalTriggerId = link.getAttribute('data-modal-trigger');
+                const href = link.getAttribute('href') || '';
+                const hashId = href.startsWith('#')? href.slice(1): '';
+                const hashTarget = hashId? document.getElementById(hashId): null;
+
+                if (modalTriggerId) {
+                    e.preventDefault();
+                    closeCurrentSkillsModal(() => {
+                        if (hashTarget) hashTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        window.setTimeout(() => {
+                            const trigger = document.getElementById(modalTriggerId);
+                            if (trigger) trigger.click();
+                        }, hashTarget? 180: 0);
+                    });
+                    return;
+                }
+
+                if (!hashTarget) return;
+                e.preventDefault();
+                closeCurrentSkillsModal(() => {
+                    if (projectDetailIds.has(hashId)) {
+                        openProjectDetails(hashTarget);
+                        return;
+                    }
+                    hashTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // Dropdown Logic for Subsidiaries (Eshkolot)
+            const subsTrigger = document.getElementById('subsidiaries-trigger');
+            const subsDropdown = document.getElementById('subsidiaries-dropdown');
+            const subsIcon = document.getElementById('subsidiaries-icon');
+            if (subsTrigger && subsDropdown && subsIcon) {
+                subsTrigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    subsDropdown.classList.toggle('hidden');
+                    subsIcon.classList.toggle('rotate-180');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!subsTrigger.contains(e.target) &&!subsDropdown.contains(e.target)) {
+                        subsDropdown.classList.add('hidden');
+                        subsIcon.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Accordion Logic for NUIS Board Roles
+            const nuisBoardTrigger = document.getElementById('nuis-board-trigger');
+            const nuisBoardContent = document.getElementById('nuis-board-content');
+            const nuisBoardIcon = document.getElementById('nuis-board-icon');
+            if (nuisBoardTrigger && nuisBoardContent && nuisBoardIcon) {
+                nuisBoardTrigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    nuisBoardContent.classList.toggle('hidden');
+                    nuisBoardIcon.classList.toggle('rotate-180');
+                });
+            }
+
+            // Accordion Logic for TAU Board Roles
+            const tauBoardTrigger = document.getElementById('tau-board-trigger');
+            const tauBoardContent = document.getElementById('tau-board-content');
+            const tauBoardIcon = document.getElementById('tau-board-icon');
+            if (tauBoardTrigger && tauBoardContent && tauBoardIcon) {
+                tauBoardTrigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    tauBoardContent.classList.toggle('hidden');
+                    tauBoardIcon.classList.toggle('rotate-180');
+                });
+            }
+
+            // Accordion Logic for Givatayim Board Roles
+            const givatayimBoardTrigger = document.getElementById('givatayim-board-trigger');
+            const givatayimBoardContent = document.getElementById('givatayim-board-content');
+            const givatayimBoardIcon = document.getElementById('givatayim-board-icon');
+            if (givatayimBoardTrigger && givatayimBoardContent && givatayimBoardIcon) {
+                givatayimBoardTrigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    givatayimBoardContent.classList.toggle('hidden');
+                    givatayimBoardIcon.classList.toggle('rotate-180');
+                });
+            }
+
+            // Charts Setup
+            const sharedOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, font: { family: 'Assistant', size: 16, weight: 'bold' } }
+                },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { grid: { color: 'rgba(226, 232, 240, 0.5)' } }
+                }
+            };
+
+            const safeInitChart = (id, config) => {
+                const el = document.getElementById(id);
+                if (el) return new Chart(el.getContext('2d'), config);
+            };
+
+            // Eshkolot Charts
+            safeInitChart('eshkolotRevenueChart', {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025 (forecast)'],
+                    datasets: [{ label: 'Revenue', data: [31.6, 36.4, 35.3, 37.2, 40.1, 45], borderColor: '#0284c7', borderWidth: 4, tension: 0.4 }]
+                },
+                options: {...sharedOptions, plugins: {...sharedOptions.plugins, title: {...sharedOptions.plugins.title, text: 'Revenue growth (in millions of ILS)' } } }
+            });
+
+            safeInitChart('eshkolotNetProfitChart', {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025 (forecast)'],
+                    datasets: [{ label: 'Net profit', data: [23.1, 25.5, 25.6, 26.3, 30.1, 33], borderColor: '#10b981', borderWidth: 4, tension: 0.4 }]
+                },
+                options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { ...sharedOptions.plugins.title, text: 'Net profit trend (in millions of ILS)' } } }
+            });
+
+            // SHAHAM Charts
+            safeInitChart('shahamRevenueChart', {
+                type: 'line',
+                data: {
+                    labels: ['2014', '2016', '2018', '2020'],
+                    datasets: [{ label: 'Revenue', data: [2.16, 2.70, 3.87, 5.6], borderColor: '#8b5cf6', borderWidth: 4, tension: 0.4 }]
+                },
+                options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { ...sharedOptions.plugins.title, text: 'SHAHAM revenue (in millions of ILS)' } } }
+            });
+
+            safeInitChart('shahamSurplusChart', {
+                type: 'line',
+                data: {
+                    labels: ['2015', '2017', '2019', '2020'],
+                    datasets: [{ label: 'Surplus', data: [3.6, 200.4, 784.4, 750.7], borderColor: '#3b82f6', borderWidth: 4, tension: 0.4 }]
+                },
+                options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, title: { ...sharedOptions.plugins.title, text: 'Surplus trend (in thousands of ILS)' } } }
+            });
+
+            // Donut Charts for Eshlam
+            const donutOptions = { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: false }, tooltip: { enabled: false } } };
+            safeInitChart('eshlamSplitBefore', { type: 'doughnut', data: { datasets: [{ label: 'Before', data: [50, 50], backgroundColor: ['#94a3b8', '#f1f5f9'], borderWidth: 0 }] }, options: donutOptions });
+            safeInitChart('eshlamSplitAfter', { type: 'doughnut', data: { datasets: [{ label: 'After', data: [64, 36], backgroundColor: ['#7c3aed', '#f1f5f9'], borderWidth: 0 }] }, options: donutOptions });
+
+            lucide.createIcons();
+        });
+    </script>
+
+    <!-- Global Video Modal -->
+    <div id="global-video-modal"
+        class="fixed inset-0 z-[3200] hidden items-center justify-center p-4 sm:p-6 bg-slate-900/90 backdrop-blur-sm transition-opacity duration-300">
+        <div
+            class="relative w-full max-w-5xl aspect-video bg-black rounded-2xl shadow-2xl overflow-hidden border border-slate-700 mx-auto mt-10">
+            <button id="global-video-close" type="button" aria-label="Close video"
+                class="absolute -top-12 end-0 sm:top-4 sm:end-4 text-white hover:text-red-400 transition-colors p-2 z-[3010] cursor-pointer pointer-events-auto">
+                <i data-lucide="x" class="w-7 h-7 pointer-events-none"></i>
+            </button>
+            <iframe id="global-video-iframe" class="w-full h-full" src="" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoModal = document.getElementById('global-video-modal');
+            const videoIframe = document.getElementById('global-video-iframe');
+            const videoCloseBtn = document.getElementById('global-video-close');
+            if (!videoModal || !videoIframe) return;
+
+            bindGlobalEscapeListener();
+
+            const videoController = {
+                el: videoModal,
+                isOpen: false,
+                close() {
+                    if (!this.isOpen) return;
+                    this.isOpen = false;
+                    popModalOverlay(this);
+                    videoModal.classList.add('hidden');
+                    videoModal.classList.remove('flex');
+                    videoIframe.src = '';
+                },
+                open(videoId) {
+                    if (!videoId || this.isOpen) return;
+                    this.isOpen = true;
+                    pushModalOverlay(this);
+                    videoIframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+                    videoModal.classList.remove('hidden');
+                    videoModal.classList.add('flex');
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }
+            };
+
+            document.querySelectorAll('a[href*="youtube.com/watch"], a[href*="youtu.be/"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    if (a.dataset.videoExternal === 'true') return;
+                    e.preventDefault();
+                    let videoId = '';
+                    if (a.href.includes('youtube.com/watch')) {
+                        videoId = new URL(a.href).searchParams.get('v');
+                    } else if (a.href.includes('youtu.be/')) {
+                        videoId = a.href.split('youtu.be/')[1].split('?')[0];
+                    }
+                    if (videoId) videoController.open(videoId);
+                });
+            });
+
+            if (videoCloseBtn) videoCloseBtn.addEventListener('click', () => videoController.close());
+            videoModal.addEventListener('click', e => {
+                if (e.target === videoModal) videoController.close();
+            });
+        });
+    </script>
+</body>
+
+</html>
