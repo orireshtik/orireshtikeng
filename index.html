@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -252,6 +252,124 @@
             line-height: 1;
         }
 
+    </style>
+    <!-- Accessibility: FOUC Prevention -->
+    <script>
+    (function(){try{
+      var p=JSON.parse(localStorage.getItem('a11y_prefs_v1')||'{}');
+      var c=document.documentElement.classList;
+      if(p.links)c.add('a11y-links');
+      if(p.contrast==='high')c.add('a11y-contrast-high');
+      if(p.contrast==='invert')c.add('a11y-contrast-invert');
+      if(p.contrast==='mono')c.add('a11y-contrast-mono');
+      if(p.textSize===115)c.add('a11y-text-115');
+      if(p.textSize===130)c.add('a11y-text-130');
+      if(p.textSize===150)c.add('a11y-text-150');
+      if(p.lines===16)c.add('a11y-lines-16');
+      if(p.lines===20)c.add('a11y-lines-20');
+      if(p.font)c.add('a11y-font');
+      if(p.cursor==='large')c.add('a11y-cursor-large');
+      if(p.cursor==='black')c.add('a11y-cursor-black');
+      if(p.headings)c.add('a11y-headings');
+      if(p.motion)c.add('a11y-motion');
+    }catch(e){}}());
+    </script>
+    <!-- Accessibility: CSS -->
+    <style id="a11y-styles">
+    #a11y-trigger {
+        position: fixed;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        z-index: 9998;
+        width: 52px; height: 52px;
+        border-radius: 50%;
+        background: #1a56db;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        font-size: 1.5rem;
+        transition: transform 0.2s;
+    }
+    #a11y-trigger:hover { transform: scale(1.1); }
+    #a11y-trigger:focus-visible { outline: 3px solid #fbbf24; outline-offset: 3px; }
+    #a11y-panel {
+        position: fixed;
+        bottom: 5rem;
+        left: 1.5rem;
+        z-index: 9999;
+        background: #fff;
+        border: 2px solid #1a56db;
+        border-radius: 12px;
+        padding: 1rem;
+        width: 280px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        direction: ltr;
+        display: none;
+    }
+    #a11y-panel.open { display: block; }
+    #a11y-panel h2 {
+        margin: 0 0 .75rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1a56db;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: .5rem;
+    }
+    .a11y-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+    .a11y-btn {
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: .25rem; padding: .5rem .25rem;
+        border: 2px solid #e5e7eb; border-radius: 8px;
+        background: #f9fafb; cursor: pointer;
+        font-size: .75rem; font-weight: 600; color: #374151;
+        transition: all 0.15s; min-height: 64px;
+    }
+    .a11y-btn:hover { border-color: #1a56db; background: #eff6ff; }
+    .a11y-btn:focus-visible { outline: 3px solid #fbbf24; outline-offset: 2px; }
+    .a11y-btn[aria-pressed="true"], .a11y-btn.active { border-color: #1a56db; background: #1a56db; color: #fff; }
+    .a11y-btn .a11y-icon { font-size: 1.25rem; line-height: 1; }
+    .a11y-reset {
+        margin-top: .75rem; width: 100%; padding: .5rem;
+        border: 2px solid #e5e7eb; border-radius: 8px;
+        background: #f9fafb; cursor: pointer;
+        font-size: .8rem; font-weight: 600; color: #374151;
+    }
+    .a11y-reset:hover { border-color: #ef4444; color: #ef4444; }
+    .a11y-reset:focus-visible { outline: 3px solid #fbbf24; outline-offset: 2px; }
+    #a11y-status { position: absolute; left: -9999px; }
+    html.a11y-links a { text-decoration: underline !important; font-weight: 700 !important; }
+    html.a11y-contrast-high { filter: contrast(1.5) brightness(1.1); }
+    html.a11y-contrast-invert { filter: invert(1) hue-rotate(180deg); }
+    html.a11y-contrast-mono { filter: grayscale(1); }
+    html.a11y-text-115 { font-size: 115% !important; }
+    html.a11y-text-130 { font-size: 130% !important; }
+    html.a11y-text-150 { font-size: 150% !important; }
+    html.a11y-lines-16 * { line-height: 1.6 !important; }
+    html.a11y-lines-20 * { line-height: 2.0 !important; }
+    html.a11y-font, html.a11y-font * { font-family: Arial, Helvetica, sans-serif !important; }
+    html.a11y-cursor-large, html.a11y-cursor-large * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M8 2l34 20-14 2-8 14z' fill='white' stroke='black' stroke-width='2'/%3E%3C/svg%3E"), auto !important; }
+    html.a11y-cursor-black, html.a11y-cursor-black * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M5 2l22 13-9 1-5 9z' fill='black'/%3E%3C/svg%3E"), auto !important; }
+    html.a11y-headings h1, html.a11y-headings h2, html.a11y-headings h3,
+    html.a11y-headings h4, html.a11y-headings h5, html.a11y-headings h6 {
+        background: #fef08a !important; outline: 2px solid #ca8a04 !important; padding: 0 4px !important;
+    }
+    html.a11y-motion * { animation: none !important; transition: none !important; }
+    html.a11y-contrast-invert #a11y-panel,
+    html.a11y-contrast-invert #a11y-trigger { filter: invert(1) hue-rotate(180deg); }
+    .a11y-skip-link {
+        position: absolute; top: -999px; left: -999px;
+        background: #1a56db; color: #fff;
+        padding: .5rem 1rem; z-index: 99999;
+        font-weight: 700; text-decoration: none; border-radius: 0 0 8px 0;
+    }
+    .a11y-skip-link:focus { top: 0; left: 0; }
+    @media print {
+      html[class*="a11y-"] { filter: none !important; font-size: 100% !important; }
+      html[class*="a11y-lines-"] * { line-height: normal !important; }
+      #a11y-trigger, #a11y-panel { display: none !important; }
+    }
     </style>
 </head>
 
@@ -5471,6 +5589,181 @@
             });
         });
     </script>
-</body>
+    <!-- Accessibility: Skip Link -->
+    <a href="#main-content" class="a11y-skip-link">Skip to main content</a>
+
+    <!-- Accessibility: Status Region -->
+    <div id="a11y-status" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Accessibility: Trigger Button -->
+    <button id="a11y-trigger"
+            aria-label="Accessibility menu (Alt+A)"
+            aria-expanded="false"
+            aria-controls="a11y-panel"
+            aria-keyshortcuts="Alt+A"
+            title="Open accessibility menu">
+        ♿
+    </button>
+
+    <!-- Accessibility: Panel -->
+    <div id="a11y-panel" role="dialog" aria-modal="true" aria-label="Accessibility settings" dir="ltr">
+        <h2>Accessibility</h2>
+        <div class="a11y-grid">
+            <button class="a11y-btn" id="a11y-links" aria-pressed="false" onclick="A11Y.toggle('links')">
+                <span class="a11y-icon" aria-hidden="true">🔗</span>
+                <span>Highlight Links</span>
+            </button>
+            <button class="a11y-btn" id="a11y-headings-btn" aria-pressed="false" onclick="A11Y.toggle('headings')">
+                <span class="a11y-icon" aria-hidden="true">📑</span>
+                <span>Highlight Headings</span>
+            </button>
+            <button class="a11y-btn" id="a11y-contrast-btn" aria-label="Contrast: off" onclick="A11Y.cycle('contrast')">
+                <span class="a11y-icon" aria-hidden="true">◐</span>
+                <span id="a11y-contrast-label">Contrast</span>
+            </button>
+            <button class="a11y-btn" id="a11y-text-btn" aria-label="Text size: 100%" onclick="A11Y.cycle('textSize')">
+                <span class="a11y-icon" aria-hidden="true">Aa</span>
+                <span id="a11y-text-label">Text Size</span>
+            </button>
+            <button class="a11y-btn" id="a11y-lines-btn" aria-label="Line spacing: normal" onclick="A11Y.cycle('lines')">
+                <span class="a11y-icon" aria-hidden="true">☰</span>
+                <span id="a11y-lines-label">Line Spacing</span>
+            </button>
+            <button class="a11y-btn" id="a11y-font-btn" aria-pressed="false" onclick="A11Y.toggle('font')">
+                <span class="a11y-icon" aria-hidden="true">📖</span>
+                <span>Readable Font</span>
+            </button>
+            <button class="a11y-btn" id="a11y-cursor-btn" aria-label="Cursor: default" onclick="A11Y.cycle('cursor')">
+                <span class="a11y-icon" aria-hidden="true">🖱️</span>
+                <span id="a11y-cursor-label">Cursor</span>
+            </button>
+            <button class="a11y-btn" id="a11y-motion-btn" aria-pressed="false" onclick="A11Y.toggle('motion')">
+                <span class="a11y-icon" aria-hidden="true">⏸</span>
+                <span>Stop Animations</span>
+            </button>
+        </div>
+        <button class="a11y-reset" onclick="A11Y.reset()">↺ Reset settings</button>
+    </div>
+
+    <script>
+    (function(){
+    var PREFS_KEY='a11y_prefs_v1';
+    var prefs={};
+    try{prefs=JSON.parse(localStorage.getItem(PREFS_KEY)||'{}');}catch(e){}
+    var cl=document.documentElement.classList;
+    var status=document.getElementById('a11y-status');
+    function save(){try{localStorage.setItem(PREFS_KEY,JSON.stringify(prefs));}catch(e){}}
+    function announce(msg){status.textContent='';setTimeout(function(){status.textContent=msg;},50);}
+    function applyAll(){
+        cl.toggle('a11y-links',!!prefs.links);
+        cl.toggle('a11y-contrast-high',prefs.contrast==='high');
+        cl.toggle('a11y-contrast-invert',prefs.contrast==='invert');
+        cl.toggle('a11y-contrast-mono',prefs.contrast==='mono');
+        cl.toggle('a11y-text-115',prefs.textSize===115);
+        cl.toggle('a11y-text-130',prefs.textSize===130);
+        cl.toggle('a11y-text-150',prefs.textSize===150);
+        cl.toggle('a11y-lines-16',prefs.lines===16);
+        cl.toggle('a11y-lines-20',prefs.lines===20);
+        cl.toggle('a11y-font',!!prefs.font);
+        cl.toggle('a11y-cursor-large',prefs.cursor==='large');
+        cl.toggle('a11y-cursor-black',prefs.cursor==='black');
+        cl.toggle('a11y-headings',!!prefs.headings);
+        cl.toggle('a11y-motion',!!prefs.motion);
+        updateUI();
+    }
+    function updateUI(){
+        setPressed('a11y-links',!!prefs.links);
+        setPressed('a11y-headings-btn',!!prefs.headings);
+        setPressed('a11y-font-btn',!!prefs.font);
+        setPressed('a11y-motion-btn',!!prefs.motion);
+        var cmap={high:'High',invert:'Invert',mono:'Mono'};
+        var cl2=cmap[prefs.contrast]||'Off';
+        document.getElementById('a11y-contrast-label').textContent='Contrast: '+cl2;
+        var cb=document.getElementById('a11y-contrast-btn');
+        cb.setAttribute('aria-label','Contrast: '+cl2);
+        cb.classList.toggle('active',!!prefs.contrast);
+        var tl=prefs.textSize?prefs.textSize+'%':'100%';
+        document.getElementById('a11y-text-label').textContent='Text: '+tl;
+        var tb=document.getElementById('a11y-text-btn');
+        tb.setAttribute('aria-label','Text size: '+tl);
+        tb.classList.toggle('active',!!prefs.textSize);
+        var lmap={16:'1.6',20:'2.0'};
+        var ll=lmap[prefs.lines]||'Normal';
+        document.getElementById('a11y-lines-label').textContent='Spacing: '+ll;
+        var lb=document.getElementById('a11y-lines-btn');
+        lb.setAttribute('aria-label','Line spacing: '+ll);
+        lb.classList.toggle('active',!!prefs.lines);
+        var curmap={large:'Large',black:'Black'};
+        var cur=curmap[prefs.cursor]||'Default';
+        document.getElementById('a11y-cursor-label').textContent='Cursor: '+cur;
+        var curb=document.getElementById('a11y-cursor-btn');
+        curb.setAttribute('aria-label','Cursor: '+cur);
+        curb.classList.toggle('active',!!prefs.cursor);
+    }
+    function setPressed(id,val){
+        var el=document.getElementById(id);
+        if(el){el.setAttribute('aria-pressed',val?'true':'false');el.classList.toggle('active',val);}
+    }
+    window.A11Y={
+        toggle:function(key){
+            prefs[key]=!prefs[key];save();applyAll();
+            var msgs={links:prefs[key]?'Links highlighted':'Links normal',
+                      headings:prefs[key]?'Headings highlighted':'Headings normal',
+                      font:prefs[key]?'Readable font on':'Default font',
+                      motion:prefs[key]?'Animations stopped':'Animations on'};
+            announce(msgs[key]||'');
+        },
+        cycle:function(key){
+            if(key==='contrast'){
+                var s=[undefined,'high','invert','mono'];
+                prefs.contrast=s[(s.indexOf(prefs.contrast)+1)%s.length];
+                var m={high:'High contrast',invert:'Colors inverted',mono:'Grayscale'};
+                announce(prefs.contrast?m[prefs.contrast]:'Contrast off');
+            }else if(key==='textSize'){
+                var s2=[undefined,115,130,150];
+                prefs.textSize=s2[(s2.indexOf(prefs.textSize)+1)%s2.length];
+                announce(prefs.textSize?'Text size '+prefs.textSize+'%':'Default text size');
+            }else if(key==='lines'){
+                var s3=[undefined,16,20];
+                prefs.lines=s3[(s3.indexOf(prefs.lines)+1)%s3.length];
+                var lm={16:'Line spacing 1.6',20:'Line spacing 2.0'};
+                announce(prefs.lines?lm[prefs.lines]:'Default line spacing');
+            }else if(key==='cursor'){
+                var s4=[undefined,'large','black'];
+                prefs.cursor=s4[(s4.indexOf(prefs.cursor)+1)%s4.length];
+                var cm={large:'Large cursor',black:'Black cursor'};
+                announce(prefs.cursor?cm[prefs.cursor]:'Default cursor');
+            }
+            save();applyAll();
+        },
+        reset:function(){prefs={};save();applyAll();announce('Accessibility settings reset');}
+    };
+    var trigger=document.getElementById('a11y-trigger');
+    var panel=document.getElementById('a11y-panel');
+    trigger.addEventListener('click',function(){
+        var open=panel.classList.toggle('open');
+        trigger.setAttribute('aria-expanded',open?'true':'false');
+        if(open)panel.querySelector('button').focus();
+    });
+    document.addEventListener('keydown',function(e){
+        if(e.key==='Escape'&&panel.classList.contains('open')){
+            panel.classList.remove('open');trigger.setAttribute('aria-expanded','false');trigger.focus();
+        }
+        if(e.altKey&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&e.code==='KeyA'){
+            e.preventDefault();
+            var open2=panel.classList.toggle('open');
+            trigger.setAttribute('aria-expanded',open2?'true':'false');
+            if(open2)panel.querySelector('button').focus();else trigger.focus();
+        }
+    });
+    document.addEventListener('click',function(e){
+        if(panel.classList.contains('open')&&!panel.contains(e.target)&&e.target!==trigger){
+            panel.classList.remove('open');trigger.setAttribute('aria-expanded','false');
+        }
+    });
+    applyAll();
+    }());
+    </script></body>
 
 </html>
+
